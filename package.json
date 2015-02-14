@@ -10,8 +10,10 @@
   "mainInput": "main",
   "mainOutput": "main",
   "dependencies": {
+    "material-ui": "^0.7.0",
+    "react": "~0.12.2",
     "react-router": "^0.11.6",
-    "react": "~0.12.2"
+    "react-tap-event-plugin": "^0.1.4"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

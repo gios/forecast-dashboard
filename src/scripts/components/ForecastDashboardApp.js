@@ -2,6 +2,7 @@
 
 var React = require('react/addons');
 var ReactTransitionGroup = React.addons.TransitionGroup;
+console.log(ReactTransitionGroup);
 
 // Export React so the devtools can find it
 (window !== window.top ? window.top : window).React = React;
