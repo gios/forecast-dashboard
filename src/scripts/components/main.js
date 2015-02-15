@@ -1,16 +1,19 @@
 var ForecastDashboardApp = require('./ForecastDashboardApp'),
     React = require('react'),
     Router = require('react-router'),
-    Route = Router.Route;
+    DefaultRoute = Router.DefaultRoute,
+    Link = Router.Link,
+    Route = Router.Route,
+    RouteHandler = Router.RouteHandler;
 
 var content = document.getElementById('content');
 
 var Routes = (
     <Route handler={ForecastDashboardApp}>
-        <Route name="/" handler = {ForecastDashboardApp} />
+        <Route name="other" handler = {ForecastDashboardApp} />
     </Route>
 );
 
-Router.run(Routes, function (Handler) {
+Router.run(Routes, Router.HistoryLocation, function (Handler) {
     React.render(<Handler/>, content);
 });

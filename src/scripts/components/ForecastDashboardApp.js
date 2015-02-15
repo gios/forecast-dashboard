@@ -15,14 +15,11 @@ injectTapEventPlugin();
 require('../../styles/normalize.less');
 require('../../styles/main.less');
 
-var imageURL = require('../../images/yeoman.png');
-
 var ForecastDashboardApp = React.createClass({
     render: function () {
         return (
             <div className='main'>
                 <ReactTransitionGroup transitionName="fade">
-                    <img src={imageURL} />
                     <DatePicker hintText="Portrait Dialog" />
                 </ReactTransitionGroup>
             </div>
