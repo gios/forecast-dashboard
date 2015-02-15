@@ -18,16 +18,16 @@ require('../../styles/main.less');
 var imageURL = require('../../images/yeoman.png');
 
 var ForecastDashboardApp = React.createClass({
-  render: function() {
-    return (
-      <div className='main'>
-        <ReactTransitionGroup transitionName="fade">
-          <img src={imageURL} />
-          <DatePicker hintText="Portrait Dialog" />
-        </ReactTransitionGroup>
-      </div>
-    );
-  }
+    render: function () {
+        return (
+            <div className='main'>
+                <ReactTransitionGroup transitionName="fade">
+                    <img src={imageURL} />
+                    <DatePicker hintText="Portrait Dialog" />
+                </ReactTransitionGroup>
+            </div>
+        );
+    }
 });
 
 module.exports = ForecastDashboardApp;

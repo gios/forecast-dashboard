@@ -1,5 +1,5 @@
 {
-  "generator-react-webpack": {
-    "styles-language": "less"
-  }
+    "generator-react-webpack": {
+        "styles-language": "less"
+    }
 }

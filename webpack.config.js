@@ -9,49 +9,49 @@ var webpack = require('webpack');
 
 module.exports = {
 
-  output: {
-    filename: 'main.js',
-    publicPath: '/assets/'
-  },
+    output: {
+        filename: 'main.js',
+        publicPath: '/assets/'
+    },
 
-  cache: true,
-  debug: true,
-  devtool: false,
-  entry: [
+    cache: true,
+    debug: true,
+    devtool: false,
+    entry: [
       'webpack/hot/only-dev-server',
       './src/scripts/components/main.js'
   ],
 
-  stats: {
-    colors: true,
-    reasons: true
-  },
+    stats: {
+        colors: true,
+        reasons: true
+    },
 
-  resolve: {
-    extensions: ['', '.js']
-  },
-  module: {
-    preLoaders: [{
-      test: '\\.js$',
-      exclude: 'node_modules',
-      loader: 'jshint'
+    resolve: {
+        extensions: ['', '.js']
+    },
+    module: {
+        preLoaders: [{
+            test: '\\.js$',
+            exclude: 'node_modules',
+            loader: 'jshint'
     }],
-    loaders: [{
-      test: /\.js$/,
-      loader: 'react-hot!jsx-loader?harmony'
+        loaders: [{
+            test: /\.js$/,
+            loader: 'react-hot!jsx-loader?harmony'
     }, {
-      test: /\.less/,
-      loader: 'style-loader!css-loader!less-loader'
+            test: /\.less/,
+            loader: 'style-loader!css-loader!less-loader'
     }, {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader'
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
     }, {
-      test: /\.(png|jpg)$/,
-      loader: 'url-loader?limit=8192'
+            test: /\.(png|jpg)$/,
+            loader: 'url-loader?limit=8192'
     }]
-  },
+    },
 
-  plugins: [
+    plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]

@@ -10,51 +10,51 @@ var webpack = require('webpack');
 
 module.exports = {
 
-  output: {
-    publicPath: '/assets/',
-    path: 'dist/assets/',
-    filename: 'main.js'
-  },
+    output: {
+        publicPath: '/assets/',
+        path: 'dist/assets/',
+        filename: 'main.js'
+    },
 
-  debug: false,
-  devtool: false,
-  entry: './src/scripts/components/main.js',
+    debug: false,
+    devtool: false,
+    entry: './src/scripts/components/main.js',
 
-  stats: {
-    colors: true,
-    reasons: false
-  },
+    stats: {
+        colors: true,
+        reasons: false
+    },
 
-  plugins: [
+    plugins: [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin()
   ],
 
-  resolve: {
-    extensions: ['', '.js']
-  },
+    resolve: {
+        extensions: ['', '.js']
+    },
 
-  module: {
-    preLoaders: [{
-      test: '\\.js$',
-      exclude: 'node_modules',
-      loader: 'jshint'
+    module: {
+        preLoaders: [{
+            test: '\\.js$',
+            exclude: 'node_modules',
+            loader: 'jshint'
     }],
 
-    loaders: [{
-      test: /\.js$/,
-      loader: 'jsx-loader?harmony'
+        loaders: [{
+            test: /\.js$/,
+            loader: 'jsx-loader?harmony'
     }, {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader'
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
     }, {
-      test: /\.less/,
-      loader: 'style-loader!css-loader!less-loader'
+            test: /\.less/,
+            loader: 'style-loader!css-loader!less-loader'
     }, {
-      test: /\.(png|jpg)$/,
-      loader: 'url-loader?limit=8192'
+            test: /\.(png|jpg)$/,
+            loader: 'url-loader?limit=8192'
     }]
-  }
+    }
 };
