@@ -1,7 +1,7 @@
-var ForecastDashboardApp = require('./ForecastDashboardApp');
-var React = require('react');
-var Router = require('react-router');
-var Route = Router.Route;
+var ForecastDashboardApp = require('./ForecastDashboardApp'),
+    React = require('react'),
+    Router = require('react-router'),
+    Route = Router.Route;
 
 var content = document.getElementById('content');
 
