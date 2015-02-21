@@ -6,6 +6,7 @@ var React = require('react/addons'),
     injectTapEventPlugin = require("react-tap-event-plugin"),
     mui = require('material-ui'),
     RaisedButton = mui.RaisedButton,
+    Paper = mui.Paper,
     Snackbar = mui.Snackbar;
 injectTapEventPlugin();
 
@@ -35,10 +36,13 @@ var ForecastDashboardApp = React.createClass({
     render: function () {
         return (
             <div className='main'>
-                <InformationPanel />
-                <SkyconsPanel iconElement="icon1" color="#A0A0A0" iconType="rain" />
-                <RaisedButton onTouchTap={this._handleClick} label="Add to my calendar" />
-                <Snackbar ref="snackbar" message="Event added to your calendar"action="undo" onActionTouchTap={this._handleAction} />
+                <Paper className="boxWrapper" zDepth={1}>
+                    <h1>{this.props.name}</h1>
+                    <SkyconsPanel iconElement="icon1" color="#505050" iconType="rain" />
+                    <InformationPanel />
+                    <RaisedButton onTouchTap={this._handleClick} label="Add to my calendar" />
+                    <Snackbar ref="snackbar" message="Event added to your calendar"action="undo" onActionTouchTap={this._handleAction} />
+                </Paper>
             </div>
         );
     }

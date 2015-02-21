@@ -15,5 +15,5 @@ var Routes = (
 );
 
 Router.run(Routes, Router.HistoryLocation, function (Handler) {
-    React.render(<Handler/>, content);
+    React.render(<Handler name="Go" />, content);
 });
