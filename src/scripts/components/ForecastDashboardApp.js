@@ -6,8 +6,7 @@ var React = require('react/addons'),
     injectTapEventPlugin = require("react-tap-event-plugin"),
     mui = require('material-ui'),
     RaisedButton = mui.RaisedButton,
-    Snackbar = mui.Snackbar,
-    CSSReactTransitionGroup = React.addons.CSSTransitionGroup;
+    Snackbar = mui.Snackbar;
 injectTapEventPlugin();
 
 // Export React so the devtools can find it
@@ -16,18 +15,20 @@ injectTapEventPlugin();
 
 // Custom components
 var InformationPanel = require("../../scripts/components/InformationPanel");
+var SkyconsPanel = require("../../scripts/components/SkyconsPanel");
 
 // CSS
 require('../../styles/normalize.less');
 require('../../styles/main.less');
 
 var ForecastDashboardApp = React.createClass({
+    
     _handleClick: function (e) {
          this.refs.snackbar.show();
     },
 
      _handleAction: function () {
-         //We can add more code here! In this example, we'll just include an alert.
+         // We can add more code here! In this example, we'll just include an alert.
          alert("We removed the event from your calendar.");
     },
     
@@ -35,6 +36,7 @@ var ForecastDashboardApp = React.createClass({
         return (
             <div className='main'>
                 <InformationPanel />
+                <SkyconsPanel iconElement="icon1" color="red" iconType="PARTLY_CLOUDY_NIGHT" />
                 <RaisedButton onTouchTap={this._handleClick} label="Add to my calendar" />
                 <Snackbar ref="snackbar" message="Event added to your calendar"action="undo" onActionTouchTap={this._handleAction} />
             </div>

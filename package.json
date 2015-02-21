@@ -1,7 +1,7 @@
 {
     "name": "forecast-dashboard",
-    "version": "0.0.2",
-    "description": "",
+    "version": "0.0.3",
+    "description": "Forecast Dashboard Application",
     "repository": "",
     "private": true,
     "src": "src",
