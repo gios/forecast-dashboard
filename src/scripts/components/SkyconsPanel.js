@@ -37,7 +37,7 @@ var SkyconsPanel = React.createClass({
     getWeatherIcon() {
         // Skycons
         var skycons = new Skycons({"color": this.state.color});
-        skycons.set(document.getElementById(this.state.iconElement), Skycons[this.state.iconType]);
+        skycons.set(document.getElementById(this.state.iconElement), this.state.iconType);
         skycons.play();
     },
     

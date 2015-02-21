@@ -36,7 +36,7 @@ var ForecastDashboardApp = React.createClass({
         return (
             <div className='main'>
                 <InformationPanel />
-                <SkyconsPanel iconElement="icon1" color="red" iconType="PARTLY_CLOUDY_NIGHT" />
+                <SkyconsPanel iconElement="icon1" color="#A0A0A0" iconType="rain" />
                 <RaisedButton onTouchTap={this._handleClick} label="Add to my calendar" />
                 <Snackbar ref="snackbar" message="Event added to your calendar"action="undo" onActionTouchTap={this._handleAction} />
             </div>
