@@ -6,19 +6,40 @@ var koa = require('koa'),
     logger = require('koa-logger'),
     route = require('koa-route'),
     send = require('koa-send'),
+    Forecast = require('forecast'),
     app = koa();
 
 // Middleware
 app.use(logger());
 app.use(bodyParser());
 
+// Forecast API
+var forecast = new Forecast({
+    service: 'forecast.io',
+    key: '75e082171b2e3f48839528d4feba6de9',
+    units: 'celcius',
+    cache: true,
+    ttl: {
+        minutes: 27,
+        seconds: 45
+    }
+});
+
 // Functions
-function *getAPI() {
-    yield send(this, __dirname + '/ForecastTestAPI.json');
+
+function getForecastData(coords) {
+    return function(callback) {
+        forecast.get(coords, callback);
+    };
+}
+
+function* getData(next) {
+    this.set('Access-Control-Allow-Origin', '*');
+    this.body = yield getForecastData([-33.8683, 151.2086]);
 }
 
 // Routes
-app.use(route.get('/ForecastTestAPI.json', getAPI));
+app.use(route.get('/forecast', getData));
 
 app.listen(3000);
 

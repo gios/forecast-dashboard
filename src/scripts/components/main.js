@@ -15,5 +15,5 @@ var Routes = (
 );
 
 Router.run(Routes, Router.HistoryLocation, function (Handler) {
-    React.render(<Handler name="Go" />, content);
+    React.render(<Handler url="http://localhost:3000/forecast" />, content);
 });

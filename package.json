@@ -1,6 +1,6 @@
 {
     "name": "forecast-dashboard",
-    "version": "0.0.6",
+    "version": "0.1.8 beta",
     "description": "Forecast Dashboard Application",
     "repository": "",
     "private": true,
@@ -10,6 +10,7 @@
     "mainInput": "main",
     "mainOutput": "main",
     "dependencies": {
+        "forecast": "^0.2.1",
         "jquery": "^2.1.3",
         "koa": "^0.18.0",
         "koa-bodyparser": "^1.3.1",
