@@ -16,8 +16,8 @@ var SkyconsPanel = React.createClass({
     getInitialState: function () {
         return {
             iconElement: "icon1",
-            color: "red",
-            iconType: "PARTLY_CLOUDY_NIGHT"
+            color: "#505050",
+            iconType: "rain"
         };
     },
     

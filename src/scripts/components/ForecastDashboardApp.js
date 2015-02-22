@@ -15,8 +15,9 @@ injectTapEventPlugin();
 (window !== window.top ? window.top : window).mui = mui;
 
 // Custom components
-var InformationPanel = require("../../scripts/components/InformationPanel");
-var SkyconsPanel = require("../../scripts/components/SkyconsPanel");
+var InformationPanel = require("../../scripts/components/InformationPanel"),
+    SkyconsPanel = require("../../scripts/components/SkyconsPanel"),
+    ToolbarPanel = require("../../scripts/components/ToolbarPanel");
 
 // CSS
 require('../../styles/normalize.less');
@@ -36,6 +37,7 @@ var ForecastDashboardApp = React.createClass({
     render: function () {
         return (
             <div className='main'>
+                <ToolbarPanel />
                 <Paper className="boxWrapper" zDepth={1}>
                     <h1>{this.props.name}</h1>
                     <SkyconsPanel iconElement="icon1" color="#505050" iconType="rain" />
