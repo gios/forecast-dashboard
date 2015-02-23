@@ -48,8 +48,13 @@ var ForecastDashboardApp = React.createClass({
     render: function () {
         return (
             <div className='main'>
-                <ToolbarPanel />
-                <GlobalSummaryPanel data={this.state.data} />
+            <ToolbarPanel />
+                <div className="container">
+                    <div className="flex1">
+                        <GlobalSummaryPanel data={this.state.data} />
+                    </div>
+                    <div className="flex2"></div>
+                </div>
             </div>
         );
     }

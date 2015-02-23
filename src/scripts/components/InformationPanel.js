@@ -1,11 +1,10 @@
 'use strict';
 
-// Libraries
 var React = require('react/addons'),
     $ = require('jquery'),
     injectTapEventPlugin = require("react-tap-event-plugin"),
     mui = require('material-ui'),
-    Slider = mui.Slider;
+    Menu = mui.Menu;
 injectTapEventPlugin();
 
 require('../../styles/InformationPanel.less');
@@ -13,9 +12,16 @@ require('../../styles/InformationPanel.less');
 var InformationPanel = React.createClass({
     
     render: function () {
+        
+        var numberMenuItems = [
+            { payload: '1', text: 'All', number: '22' },
+            { payload: '3', text: 'Uncategorized', number: '6'},
+            { payload: '4', text: 'Trash', number: '11' }
+        ];
+        
         return (
-            <div>
-                <Slider name="slider1" value={0.5} />
+            <div className="InformationPanel">
+                <Menu menuItems={numberMenuItems} />
             </div>
         );
     }

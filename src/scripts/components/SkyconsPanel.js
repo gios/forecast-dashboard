@@ -1,6 +1,5 @@
 'use strict';
 
-// Libraries
 var React = require('react/addons'),
     Skycons = require("../../scripts/assets/skycons.js"),
     $ = require('jquery'),

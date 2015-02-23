@@ -1,6 +1,5 @@
 'use strict';
 
-// Libraries
 var React = require('react/addons'),
     $ = require('jquery'),
     injectTapEventPlugin = require("react-tap-event-plugin"),
@@ -10,11 +9,9 @@ var React = require('react/addons'),
     Snackbar = mui.Snackbar;
 injectTapEventPlugin();
 
-// Custom components
 var SkyconsPanel = require("../../scripts/components/SkyconsPanel"),
     InformationPanel = require("../../scripts/components/InformationPanel");
 
-// LESS
 require('../../styles/GlobalSummaryPanel.less');
 
 var GlobalSummaryPanel = React.createClass({
@@ -24,17 +21,16 @@ var GlobalSummaryPanel = React.createClass({
     },
 
      _handleAction: function () {
-         // We can add more code here! In this example, we'll just include an alert.
          alert("We removed the event from your calendar.");
     },
     
     render: function () {
         return (
             <div>
-                <Paper className="boxWrapper" zDepth={1}>
+                <Paper zDepth={1}>
                     <h1>{this.props.data.timezone}</h1>
                     <SkyconsPanel iconElement="icon1" color="#505050" iconType="partly-cloudy-day" />
-                    <InformationPanel />
+                    <InformationPanel data={this.props.data} />
                     <RaisedButton onTouchTap={this._handleClick} label="Add to my calendar" />
                     <Snackbar ref="snackbar" message="Event added to your calendar"action="undo" onActionTouchTap={this._handleAction} />
                 </Paper>
