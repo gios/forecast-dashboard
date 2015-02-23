@@ -15,13 +15,13 @@ var InformationPanel = React.createClass({
         
         var numberMenuItems = [
             { payload: '1', text: 'All', number: '22' },
-            { payload: '3', text: 'Uncategorized', number: '6'},
-            { payload: '4', text: 'Trash', number: '11' }
+            { payload: '2', text: 'Uncategorized', number: '6'},
+            { payload: '3', text: 'Trash', number: '11' }
         ];
         
         return (
-            <div className="InformationPanel">
-                <Menu menuItems={numberMenuItems} />
+            <div>
+                <Menu className="InformationPanel" menuItems={numberMenuItems} />
             </div>
         );
     }

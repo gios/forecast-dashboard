@@ -43,7 +43,7 @@ var SkyconsPanel = React.createClass({
     render: function () {
         return (
             <div>
-                <canvas id={this.props.iconElement} width="128" height="128"></canvas>
+                <canvas id={this.props.iconElement} className="SkyconsPanel" width="128" height="128"></canvas>
             </div>
         );
     }
