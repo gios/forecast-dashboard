@@ -19,12 +19,15 @@ var GlobalSummaryPanel = React.createClass({
     
     getInitialState: function () {
         return {
-            data: {}
+            data: {},
+            currently: {},
+            hourly: {},
+            daily: {}
         };
     },
     
-    componentDidMount: function () {
-        console.log(this.props.data);
+    getCurrentlyTime: function () {
+        return moment.unix(this.props.currently.time).format("MMMM Do YYYY, h:mm:ss");
     },
     
     _handleClick: function (e) {
@@ -35,16 +38,23 @@ var GlobalSummaryPanel = React.createClass({
          alert("We removed the event from your calendar.");
     },
     
+    componentWillMount: function() {
+        setTimeout(() => {
+            console.log(this.props.data);
+            console.log(this.props.currently);
+        }, 1000);
+    },
+    
     render: function () {
         return (
             <div>
                 <Paper zDepth={1}>
                     <h1>{this.props.data.timezone}</h1>
-                    <SkyconsPanel iconElement="icon1" color="#505050" iconType="partly-cloudy-day" />
-                    <h2>{this.props.data.currently}</h2>
-                    <InformationPanel data={this.props.data} />
+                    <SkyconsPanel iconElement="icon1" color="#505050" iconType={this.props.currently.icon} />
+                    <h2>{this.getCurrentlyTime()}</h2>
+                    <InformationPanel data={this.props.currently} />
                     <RaisedButton onTouchTap={this._handleClick} label="Add to my calendar" />
-                    <Snackbar ref="snackbar" message="Event added to your calendar"action="undo" onActionTouchTap={this._handleAction} />
+                    <Snackbar ref="snackbar" message="Event added to your calendar" action="undo" onActionTouchTap={this._handleAction} />
                 </Paper>
             </div>
         );

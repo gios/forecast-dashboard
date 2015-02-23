@@ -23,26 +23,34 @@ var ForecastDashboardApp = React.createClass({
     
     getInitialState: function () {
         return {
-            data: {}
+            data: {},
+            currently: {},
+            hourly: {},
+            daily: {}
         };
     },
     
-    componentDidMount: function () {
+    loadForecastFromServer: function () {
         $.ajax({
             url: this.props.url,
             dataType: 'json',
             success: function (data) {
                 this.setState({
-                    data: data
+                    data: data,
+                    currently: data.currently,
+                    hourly: data.hourly,
+                    daily: data.daily
                 });
             }.bind(this),
             error: function (xhr, status, err) {
                 console.error(this.props.url, status, err.toString());
             }.bind(this)
         });
-        setTimeout(() => {
-            console.log(this.state.data);
-        }, 1000);
+    },
+    
+    componentDidMount: function() {
+        this.loadForecastFromServer();
+        setInterval(this.loadForecastFromServer, this.props.pollInterval);
     },
     
     render: function () {
@@ -51,7 +59,7 @@ var ForecastDashboardApp = React.createClass({
             <ToolbarPanel />
                 <div className="container">
                     <div className="flex1">
-                        <GlobalSummaryPanel data={this.state.data} />
+                        <GlobalSummaryPanel data={this.state.data} currently={this.state.currently} />
                     </div>
                     <div className="flex2"></div>
                 </div>
