@@ -29,7 +29,7 @@ var ToolbarPanel = React.createClass({
         var value = e.target.value;
         var isNumeric = !isNaN(parseFloat(value)) && isFinite(value);
         this.setState({
-            latitudeFloatingErrorText: isNumeric ? '' : 'This field must be numeric.' 
+            latitudeFloatingErrorText: isNumeric ? 'OK' : 'This field must be numeric.' 
         });
     },
     
@@ -37,7 +37,7 @@ var ToolbarPanel = React.createClass({
         var value = e.target.value;
         var isNumeric = !isNaN(parseFloat(value)) && isFinite(value);
         this.setState({
-            longitudeFloatingErrorText: isNumeric ? '' : 'This field must be numeric.' 
+            longitudeFloatingErrorText: isNumeric ? 'OK' : 'This field must be numeric.' 
         });
     },
 
