@@ -17,15 +17,6 @@ require('../../styles/GlobalSummaryPanel.less');
 
 var GlobalSummaryPanel = React.createClass({
     
-    getInitialState: function () {
-        return {
-            data: {},
-            currently: {},
-            hourly: {},
-            daily: {}
-        };
-    },
-    
     getCurrentlyTime: function () {
         return moment.unix(this.props.currently.time).format("MMMM Do YYYY, h:mm:ss");
     },
@@ -35,7 +26,7 @@ var GlobalSummaryPanel = React.createClass({
     },
 
      _handleAction: function () {
-         alert("We removed the event from your calendar.");
+         alert("We removed this forecast from your favorites.");
     },
     
     componentWillMount: function() {
@@ -47,14 +38,14 @@ var GlobalSummaryPanel = React.createClass({
     
     render: function () {
         return (
-            <div>
+            <div className="GlobalSummaryPanel">
                 <Paper zDepth={1}>
                     <h1>{this.props.data.timezone}</h1>
                     <SkyconsPanel iconElement="icon1" color="#505050" iconType={this.props.currently.icon} />
                     <h2>{this.getCurrentlyTime()}</h2>
-                    <InformationPanel data={this.props.currently} />
-                    <RaisedButton onTouchTap={this._handleClick} label="Add to my calendar" />
-                    <Snackbar ref="snackbar" message="Event added to your calendar" action="undo" onActionTouchTap={this._handleAction} />
+                    <InformationPanel currently={this.props.currently} />
+                    <RaisedButton className="favoritesButton" onTouchTap={this._handleClick} label="Add to my favorites" />
+                    <Snackbar ref="snackbar" message="This forecast added to your favorites" action="undo" onActionTouchTap={this._handleAction} />
                 </Paper>
             </div>
         );

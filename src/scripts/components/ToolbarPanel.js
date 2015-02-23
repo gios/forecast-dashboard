@@ -49,7 +49,7 @@ var ToolbarPanel = React.createClass({
         ];
         
         return (
-            <div>
+            <div className="ToolbarPanel">
                 <Toolbar>
                     <ToolbarGroup key={0} float="left">
                         <DropDownMenu menuItems={filterOptions} />
