@@ -39,6 +39,11 @@ var ToolbarPanel = React.createClass({
             longitudeFloatingErrorText: isNumeric ? 'OK' : 'This field must be numeric.' 
         });
     },
+    
+    _handleClick: function () {
+        console.log(this.refs.latitude.getValue());
+        console.log(this.refs.longitude.getValue());
+    },
 
     render: function () {
         
@@ -55,12 +60,12 @@ var ToolbarPanel = React.createClass({
                         <DropDownMenu menuItems={filterOptions} />
                     </ToolbarGroup>
                     <ToolbarGroup float="right">
-                        <TextField className="latitude" hintText="Enter latitude" errorText={this.state.latitudeFloatingErrorText}
+                        <TextField ref="latitude" className="latitude" hintText="Enter latitude" errorText={this.state.latitudeFloatingErrorText}
                         onChange={this._latitudeHandleFloatingErrorInputChange} />
-                        <TextField className="longitude" hintText="Enter longitude" errorText={this.state.longitudeFloatingErrorText}
+                        <TextField ref="longitude" className="longitude" hintText="Enter longitude" errorText={this.state.longitudeFloatingErrorText}
                         onChange={this._longitudeHandleFloatingErrorInputChange}/>
                         <span className="mui-toolbar-separator">&nbsp;</span>
-                        <RaisedButton label="Search Loaction" primary={true} />
+                        <RaisedButton onTouchTap={this._handleClick} label="Search Loaction" primary={true} />
                     </ToolbarGroup>
                 </Toolbar>
             </div>

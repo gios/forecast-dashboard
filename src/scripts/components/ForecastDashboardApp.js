@@ -34,8 +34,9 @@ var ForecastDashboardApp = React.createClass({
     },
     
     loadForecastFromServer: function () {
+        var urlRoot = this.props.url + this.state.latitude + "," + this.state.longitude;
         $.ajax({
-            url: this.props.url + this.state.latitude + "," + this.state.longitude,
+            url: urlRoot,
             dataType: 'json',
             success: function (data) {
                 this.setState({
