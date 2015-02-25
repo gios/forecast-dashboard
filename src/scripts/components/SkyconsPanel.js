@@ -21,7 +21,7 @@ var SkyconsPanel = React.createClass({
     },
     
     componentDidMount: function() {
-        setInterval(() => {
+        setTimeout(() => {
             this.getIconComponents();
             this.getWeatherIcon();
         }, 1000);
