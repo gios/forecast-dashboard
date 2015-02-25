@@ -86,10 +86,17 @@ var ForecastDashboardApp = React.createClass({
         setInterval(this.loadForecastFromServer, this.props.pollInterval);
     },
     
+    replaceCoords: function(latitude, longitude) {
+        this.replaceState({
+            latitude: latitude,
+            longitude: longitude
+        });
+    },
+    
     render: function () {
         return (
             <div className='main'>
-            <ToolbarPanel />
+            <ToolbarPanel replaceCoords={this.replaceCoords} />
                 <div className="container">
                     <div className="flex1">
                         <GlobalSummaryPanel data={this.state.data} currently={this.state.currently} />

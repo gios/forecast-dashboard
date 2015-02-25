@@ -42,14 +42,8 @@ var ToolbarPanel = React.createClass({
     },
     
     _handleClick: function () {
-        if (typeof (Storage) !== "undefined") {
-            localStorage.setItem("latitude", this.refs.latitude.getValue());
-            localStorage.setItem("longitude", this.refs.longitude.getValue());
-        } else {
-            this.refs.webStorage.show();
-        }
-        console.log(localStorage.getItem("latitude"));
-        console.log(localStorage.getItem("longitude"));     
+        this.refs.webStorage.show();
+        this.props.replaceCoords(this.refs.latitude.getValue(), this.refs.longitude.getValue());
     },
 
     render: function () {
@@ -73,7 +67,7 @@ var ToolbarPanel = React.createClass({
                         onChange={this._longitudeHandleFloatingErrorInputChange}/>
                         <span className="mui-toolbar-separator">&nbsp;</span>
                         <RaisedButton onTouchTap={this._handleClick} label="Search Loaction" primary={true} />
-                        <Snackbar ref="webStorage" message="Sorry! No Web Storage support.." />
+                        <Snackbar ref="webStorage" message="Your forecast processed..." />
                     </ToolbarGroup>
                 </Toolbar>
             </div>
