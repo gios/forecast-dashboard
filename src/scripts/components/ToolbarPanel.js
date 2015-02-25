@@ -9,6 +9,7 @@ var React = require('react/addons'),
     DropDownMenu = mui.DropDownMenu,
     RaisedButton = mui.RaisedButton,
     TextField = mui.TextField,
+    Dialog = mui.Dialog,
     Snackbar = mui.Snackbar;
 injectTapEventPlugin();
 
@@ -42,23 +43,53 @@ var ToolbarPanel = React.createClass({
     },
     
     _handleClick: function () {
-        this.refs.webStorage.show();
+        this.refs.forecastProcessed.show();
         this.props.replaceCoords(this.refs.latitude.getValue(), this.refs.longitude.getValue());
+    },
+    
+    _toolbarMenu: function (e, selectedIndex, menuItem) {
+        switch (selectedIndex) {
+        case 0:
+            break;
+        case 1:
+            this.refs.aboutDialog.show();
+            break;
+        case 2:
+            this.refs.versionDialog.show();
+            break;
+        default:
+            console.log("_toolbarMenu - invalid selectedIndex");
+        }
     },
 
     render: function () {
         
+        var menuActions = [
+            {
+                text: 'Cancel'
+            }
+        ];
+
         var filterOptions = [
-            { payload: '1', text: 'Home' },
-            { payload: '2', text: 'About' },
-            { payload: '3', text: 'Version' },
+            {
+                payload: '1',
+                text: 'Home'
+            },
+            {
+                payload: '2',
+                text: 'About'
+            },
+            {
+                payload: '3',
+                text: 'Version'
+            },
         ];
         
         return (
             <div className="ToolbarPanel">
                 <Toolbar>
-                    <ToolbarGroup key={0} float="left">
-                        <DropDownMenu menuItems={filterOptions} />
+                    <ToolbarGroup float="left">
+                        <DropDownMenu onChange={this._toolbarMenu} menuItems={filterOptions} />
                     </ToolbarGroup>
                     <ToolbarGroup float="right">
                         <TextField ref="latitude" className="latitude" hintText="Enter latitude" errorText={this.state.latitudeFloatingErrorText}
@@ -66,10 +97,16 @@ var ToolbarPanel = React.createClass({
                         <TextField ref="longitude" className="longitude" hintText="Enter longitude" errorText={this.state.longitudeFloatingErrorText}
                         onChange={this._longitudeHandleFloatingErrorInputChange}/>
                         <span className="mui-toolbar-separator">&nbsp;</span>
-                        <RaisedButton onTouchTap={this._handleClick} label="Search Loaction" secondary={true} />
-                        <Snackbar ref="webStorage" message="Your forecast processed..." />
+                        <RaisedButton onTouchTap={this._handleClick} label="Search Location" secondary={true} />
+                        <Snackbar ref="forecastProcessed" message="Your forecast processed..." />
                     </ToolbarGroup>
                 </Toolbar>
+                <Dialog ref="aboutDialog" title="Forecast Dashboard - Gios" actions={menuActions}>
+                    Simple forecast-dashboard app with forecast.io API
+                </Dialog>
+                <Dialog ref="versionDialog" title="Forecast Dashboard - Gios" actions={menuActions}>
+                    2/25/2015 - Version 0.4.1
+                </Dialog>
             </div>
         );
     }
