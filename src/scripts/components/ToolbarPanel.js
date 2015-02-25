@@ -66,7 +66,7 @@ var ToolbarPanel = React.createClass({
                         <TextField ref="longitude" className="longitude" hintText="Enter longitude" errorText={this.state.longitudeFloatingErrorText}
                         onChange={this._longitudeHandleFloatingErrorInputChange}/>
                         <span className="mui-toolbar-separator">&nbsp;</span>
-                        <RaisedButton onTouchTap={this._handleClick} label="Search Loaction" primary={true} />
+                        <RaisedButton onTouchTap={this._handleClick} label="Search Loaction" secondary={true} />
                         <Snackbar ref="webStorage" message="Your forecast processed..." />
                     </ToolbarGroup>
                 </Toolbar>
