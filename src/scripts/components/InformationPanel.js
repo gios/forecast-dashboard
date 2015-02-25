@@ -31,7 +31,7 @@ var InformationPanel = React.createClass({
     },
     
     componentDidMount: function() {
-        setTimeout(() => {
+        setInterval(() => {
             this.getCurrentlyComponents();
         }, 1000);
     },

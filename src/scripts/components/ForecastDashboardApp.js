@@ -4,7 +4,8 @@
 var React = require('react/addons'),
     $ = require('jquery'),
     injectTapEventPlugin = require("react-tap-event-plugin"),
-    mui = require('material-ui');
+    mui = require('material-ui'),
+    Snackbar = mui.Snackbar;
 injectTapEventPlugin();
 
 // Export React so the devtools can find it
@@ -26,13 +27,15 @@ var ForecastDashboardApp = React.createClass({
             data: {},
             currently: {},
             hourly: {},
-            daily: {}
+            daily: {},
+            latitude: 0,
+            longitude: 0
         };
     },
     
     loadForecastFromServer: function () {
         $.ajax({
-            url: this.props.url,
+            url: this.props.url + this.state.latitude + "," + this.state.longitude,
             dataType: 'json',
             success: function (data) {
                 this.setState({
@@ -48,6 +51,35 @@ var ForecastDashboardApp = React.createClass({
         });
     },
     
+    getMyGeolocation: function () {
+        var self = this;
+        
+        if (!navigator.geolocation) {
+            this.refs.geolocationSupport.show();
+            return;
+        }
+        
+        function success(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            
+            self.setState({
+                latitude: latitude,
+                longitude: longitude
+            });
+        }
+
+        function error() {
+            this.refs.geolocationError.show();
+        }
+        
+        navigator.geolocation.getCurrentPosition(success, error);
+    },
+    
+    componentWillMount: function () {
+        this.getMyGeolocation();
+    },
+    
     componentDidMount: function() {
         this.loadForecastFromServer();
         setInterval(this.loadForecastFromServer, this.props.pollInterval);
@@ -60,6 +92,8 @@ var ForecastDashboardApp = React.createClass({
                 <div className="container">
                     <div className="flex1">
                         <GlobalSummaryPanel data={this.state.data} currently={this.state.currently} />
+                        <Snackbar ref="geolocationError" message="Unable to retrieve your location" />
+                        <Snackbar ref="geolocationSupport" message="Geolocation is not supported by your browser" />
                     </div>
                     <div className="flex2"></div>
                 </div>

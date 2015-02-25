@@ -15,5 +15,5 @@ var Routes = (
 );
 
 Router.run(Routes, Router.HistoryLocation, function (Handler) {
-    React.render(<Handler url="http://localhost:3000/forecast" pollInterval={5000} />, content);
+    React.render(<Handler url="http://localhost:3000/forecast/" pollInterval={2000} />, content);
 });

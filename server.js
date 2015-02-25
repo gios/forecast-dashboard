@@ -33,13 +33,14 @@ function getForecastData(coords) {
     };
 }
 
-function* getData(next) {
+function* getData(data, next) {
     this.set('Access-Control-Allow-Origin', '*');
-    this.body = yield getForecastData([-33.8683, 151.2086]);
+    var parseData = data.split(",");
+    this.body = yield getForecastData(parseData);
 }
 
 // Routes
-app.use(route.get('/forecast', getData));
+app.use(route.get('/forecast/:coords', getData));
 
 app.listen(3000);
 

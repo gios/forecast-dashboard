@@ -10,18 +10,20 @@ injectTapEventPlugin();
 
 require('../../styles/SkyconsPanel.less');
 
+// Skycons
+var skycons = new Skycons({"color": "#505050"});
+
 var SkyconsPanel = React.createClass({
     
     getInitialState: function () {
         return {
             iconElement: "icon1",
-            color: "#505050",
             iconType: "rain"
         };
     },
     
     componentDidMount: function() {
-        setTimeout(() => {
+        setInterval(() => {
             this.getIconComponents();
             this.getWeatherIcon();
         }, 1000);
@@ -30,14 +32,11 @@ var SkyconsPanel = React.createClass({
     getIconComponents: function() {
         this.setState({
             iconElement: this.props.iconElement,
-            color: this.props.color,
             iconType: this.props.iconType
         });
     },
     
     getWeatherIcon() {
-        // Skycons
-        var skycons = new Skycons({"color": this.state.color});
         skycons.set(document.getElementById(this.state.iconElement), this.state.iconType);
         skycons.play();
     },

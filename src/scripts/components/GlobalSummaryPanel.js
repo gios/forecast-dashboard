@@ -29,19 +29,12 @@ var GlobalSummaryPanel = React.createClass({
          alert("We removed this forecast from your favorites.");
     },
     
-    componentWillMount: function() {
-        setTimeout(() => {
-            console.log(this.props.data);
-            console.log(this.props.currently);
-        }, 1000);
-    },
-    
     render: function () {
         return (
             <div className="GlobalSummaryPanel">
                 <Paper zDepth={1}>
                     <h1>{this.props.data.timezone}</h1>
-                    <SkyconsPanel iconElement="icon1" color="#505050" iconType={this.props.currently.icon} />
+                    <SkyconsPanel iconElement="icon1" iconType={this.props.currently.icon} />
                     <h2>{this.getCurrentlyTime()}</h2>
                     <InformationPanel currently={this.props.currently} />
                     <RaisedButton className="favoritesButton" onTouchTap={this._handleClick} label="Add to my favorites" />
