@@ -8,7 +8,8 @@ var React = require('react/addons'),
     ToolbarGroup = mui.ToolbarGroup,
     DropDownMenu = mui.DropDownMenu,
     RaisedButton = mui.RaisedButton,
-    TextField = mui.TextField;
+    TextField = mui.TextField,
+    Snackbar = mui.Snackbar;
 injectTapEventPlugin();
 
 require('../../styles/ToolbarPanel.less');
@@ -41,8 +42,14 @@ var ToolbarPanel = React.createClass({
     },
     
     _handleClick: function () {
-        console.log(this.refs.latitude.getValue());
-        console.log(this.refs.longitude.getValue());
+        if (typeof (Storage) !== "undefined") {
+            localStorage.setItem("latitude", this.refs.latitude.getValue());
+            localStorage.setItem("longitude", this.refs.longitude.getValue());
+        } else {
+            this.refs.webStorage.show();
+        }
+        console.log(localStorage.getItem("latitude"));
+        console.log(localStorage.getItem("longitude"));     
     },
 
     render: function () {
@@ -66,6 +73,7 @@ var ToolbarPanel = React.createClass({
                         onChange={this._longitudeHandleFloatingErrorInputChange}/>
                         <span className="mui-toolbar-separator">&nbsp;</span>
                         <RaisedButton onTouchTap={this._handleClick} label="Search Loaction" primary={true} />
+                        <Snackbar ref="webStorage" message="Sorry! No Web Storage support.." />
                     </ToolbarGroup>
                 </Toolbar>
             </div>
