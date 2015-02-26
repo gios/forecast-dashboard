@@ -14,7 +14,7 @@ body {
 
 .main {}
 
-.container {
+.containerGlobal {
     width: 100%;
     height: 100%;
     display: -webkit-flex;
@@ -25,8 +25,6 @@ body {
     -webkit-flex: 1;
     flex: 1;
     border: 1px solid black;
-    min-width: 20%;
-    min-height: 20%;
     text-align: center;
     overflow: auto;
     padding: 1%;
@@ -36,6 +34,24 @@ body {
     -webkit-flex: 3;
     flex: 3;
     border: 1px solid black;
-    min-width: 30%;
-    min-height: 30%;
+}
+
+.containerGraphs {
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.graphsContent {
+    -webkit-flex: 2;
+    flex: 2;
+    border: 1px solid black;
+}
+
+.dailyContent {
+    -webkit-flex: 2;
+    flex: 2;
+    border: 1px solid black;
 }

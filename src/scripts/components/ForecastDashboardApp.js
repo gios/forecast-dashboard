@@ -14,7 +14,8 @@ injectTapEventPlugin();
 
 // Custom components
 var ToolbarPanel = require("../../scripts/components/ToolbarPanel"),
-    GlobalSummaryPanel = require("../../scripts/components/GlobalSummaryPanel");
+    GlobalSummaryPanel = require("../../scripts/components/GlobalSummaryPanel"),
+    DailyPanel = require("../../scripts/components/DailyPanel");
 
 // LESS
 require('../../styles/normalize.less');
@@ -27,7 +28,7 @@ var ForecastDashboardApp = React.createClass({
             data: {},
             currently: {},
             hourly: {},
-            daily: {},
+            daily: [],
             latitude: 0,
             longitude: 0
         };
@@ -43,7 +44,7 @@ var ForecastDashboardApp = React.createClass({
                     data: data,
                     currently: data.currently,
                     hourly: data.hourly,
-                    daily: data.daily
+                    daily: data.daily.data
                 });
             }.bind(this),
             error: function (xhr, status, err) {
@@ -97,13 +98,20 @@ var ForecastDashboardApp = React.createClass({
         return (
             <div className='main'>
             <ToolbarPanel replaceCoords={this.replaceCoords} />
-                <div className="container">
+                <div className="containerGlobal">
                     <div className="flex1">
                         <GlobalSummaryPanel data={this.state.data} currently={this.state.currently} />
                         <Snackbar ref="geolocationError" message="Unable to retrieve your location" />
                         <Snackbar ref="geolocationSupport" message="Geolocation is not supported by your browser" />
                     </div>
-                    <div className="flex2"></div>
+                    <div className="flex2">
+                        <div className="containerGraphs">
+                            <div className="graphsContent"></div>
+                            <div className="dailyContent">
+                                <DailyPanel daily={this.state.daily} />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

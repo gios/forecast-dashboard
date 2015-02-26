@@ -105,7 +105,7 @@ var ToolbarPanel = React.createClass({
                     Simple forecast-dashboard app with forecast.io API
                 </Dialog>
                 <Dialog ref="versionDialog" title="Forecast Dashboard - Gios" actions={menuActions}>
-                    2/25/2015 - Version 0.4.1
+                    2/26/2015 - Version 0.5.2
                 </Dialog>
             </div>
         );
