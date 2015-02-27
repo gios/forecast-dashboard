@@ -105,8 +105,8 @@ var ForecastDashboardApp = React.createClass({
                         <Snackbar ref="geolocationSupport" message="Geolocation is not supported by your browser" />
                     </div>
                     <div className="flex2">
-                        <div className="containerGraphs">
-                            <div className="graphsContent"></div>
+                        <div className="containerChart">
+                            <div className="chartContent"></div>
                             <div className="dailyContent">
                                 <DailyPanel daily={this.state.daily} />
                             </div>
