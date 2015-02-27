@@ -15,7 +15,8 @@ injectTapEventPlugin();
 // Custom components
 var ToolbarPanel = require("../../scripts/components/ToolbarPanel"),
     GlobalSummaryPanel = require("../../scripts/components/GlobalSummaryPanel"),
-    DailyPanel = require("../../scripts/components/DailyPanel");
+    DailyPanel = require("../../scripts/components/DailyPanel"),
+    ChartPanel = require("../../scripts/components/ChartPanel");
 
 // LESS
 require('../../styles/normalize.less');
@@ -106,7 +107,9 @@ var ForecastDashboardApp = React.createClass({
                     </div>
                     <div className="flex2">
                         <div className="containerChart">
-                            <div className="chartContent"></div>
+                            <div className="chartContent">
+                                <ChartPanel daily={this.state.daily} />
+                            </div>
                             <div className="dailyContent">
                                 <DailyPanel daily={this.state.daily} />
                             </div>

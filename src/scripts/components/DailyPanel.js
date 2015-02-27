@@ -16,30 +16,12 @@ require('../../styles/DailyPanel.less');
 
 var DailyPanel = React.createClass({
     
-    getInitialState: function () {
-        return {
-            daily: [],
-        };
-    },
-    
-    setDailyState: function () {
-        this.setState({
-            daily: this.props.daily
-        });
-    },
-    
     getCurrentlyDate: function (time) {
         return moment.unix(time).format("MMMM Do YYYY, h:mm:ss");
     },
     
     getCurrentlyTime: function (time) {
         return moment.unix(time).format("h:mm:ss");
-    },
-    
-    componentDidMount: function () {
-        setInterval(() => {
-            this.setDailyState();
-        }, 1000);
     },
     
     render: function () {
