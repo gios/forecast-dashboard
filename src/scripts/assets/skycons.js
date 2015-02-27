@@ -173,8 +173,9 @@
     function puffs(ctx, t, cx, cy, rx, ry, rmin, rmax) {
         var i;
 
-        for (i = 5; i--;)
+        for (i = 5; i--;) {
             puff(ctx, t + i / 5, cx, cy, rx, ry, rmin, rmax);
+        }
     }
 
     function cloud(ctx, t, cx, cy, cw, s, color) {
@@ -471,16 +472,19 @@
                 d *= 2;
                 d += 2;
 
-                for (i = b; i !== d; i += 2)
+                for (i = b; i !== d; i += 2) {
                     ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
+                }
 
                 ctx.lineTo(
                     cx + (path[d - 2] * (1 - c) + path[d] * c) * cw,
                     cy + (path[d - 1] * (1 - c) + path[d + 1] * c) * cw
                 );
-            } else
-                for (i = b; i !== path.length; i += 2)
+            } else {
+                for (i = b; i !== path.length; i += 2) {
                     ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
+                }
+            }
 
             ctx.stroke();
         } else if (c < 1) {
@@ -494,8 +498,9 @@
 
             ctx.moveTo(cx + path[0] * cw, cy + path[1] * cw);
 
-            for (i = 2; i !== d; i += 2)
+            for (i = 2; i !== d; i += 2) {
                 ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
+            }
 
             ctx.lineTo(
                 cx + (path[d - 2] * (1 - c) + path[d] * c) * cw,
@@ -638,26 +643,30 @@
 
     Skycons.prototype = {
         _determineDrawingFunction: function (draw) {
-            if (typeof draw === "string")
+            if (typeof draw === "string") {
                 draw = Skycons[draw.toUpperCase().replace(/-/g, "_")] || null;
+            }
 
             return draw;
         },
         add: function (el, draw) {
             var obj;
 
-            if (typeof el === "string")
+            if (typeof el === "string") {
                 el = document.getElementById(el);
+            }
 
             // Does nothing if canvas name doesn't exists
-            if (el === null)
+            if (el === null) {
                 return;
+            }
 
             draw = this._determineDrawingFunction(draw);
 
             // Does nothing if the draw function isn't actually a function
-            if (typeof draw !== "function")
+            if (typeof draw !== "function") {
                 return;
+            }
 
             obj = {
                 element: el,
@@ -671,38 +680,44 @@
         set: function (el, draw) {
             var i;
 
-            if (typeof el === "string")
+            if (typeof el === "string") {
                 el = document.getElementById(el);
+            }
 
-            for (i = this.list.length; i--;)
+            for (i = this.list.length; i--;) {
                 if (this.list[i].element === el) {
                     this.list[i].drawing = this._determineDrawingFunction(draw);
                     this.draw(this.list[i], KEYFRAME);
                     return;
                 }
-
+            }
+            
             this.add(el, draw);
         },
         remove: function (el) {
             var i;
 
-            if (typeof el === "string")
+            if (typeof el === "string") {
                 el = document.getElementById(el);
+            }
 
-            for (i = this.list.length; i--;)
+            for (i = this.list.length; i--;) {
                 if (this.list[i].element === el) {
                     this.list.splice(i, 1);
                     return;
                 }
+            }
         },
         draw: function (obj, time) {
             var canvas = obj.context.canvas;
 
-            if (this.resizeClear)
+            if (this.resizeClear) {
                 canvas.width = canvas.width;
+            }
 
-            else
+            else {
                 obj.context.clearRect(0, 0, canvas.width, canvas.height);
+            }
 
             obj.drawing(obj.context, time, this.color);
         },
@@ -714,8 +729,9 @@
                 var now = Date.now(),
                     i;
 
-                for (i = self.list.length; i--;)
+                for (i = self.list.length; i--;) {
                     self.draw(self.list[i], now);
+                }
             }, 1000 / 60);
         },
         pause: function () {
