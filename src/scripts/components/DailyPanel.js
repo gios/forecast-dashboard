@@ -30,16 +30,12 @@ var DailyPanel = React.createClass({
             return (
                 <div>
                 <SkyconsPanel iconElement="daily" iconType={l.icon} />
-                    <table className="forecastDaily">
-                        <tr>
-                            <td><strong>Time</strong> (Час) :&nbsp;&nbsp;</td>
-                            <td>{self.getCurrentlyDate(l.time)}</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Summary</strong> (Резюме) :&nbsp;&nbsp;</td>
-                            <td>{l.summary}</td>
-                        </tr>
-                    </table>
+                    <div className="forecastDaily">
+                        <p><strong>Time</strong> (Час) :&nbsp;&nbsp;</p>
+                        <p>{self.getCurrentlyDate(l.time)}</p>
+                        <p><strong>Summary</strong> (Резюме) :&nbsp;&nbsp;</p>
+                        <p>{l.summary}</p>
+                    </div>
                     <table className="forecastDailyInfo">
                         <tr>
                             <td><strong>Sunrise Time</strong> (Час сходу) :&nbsp;&nbsp;</td>

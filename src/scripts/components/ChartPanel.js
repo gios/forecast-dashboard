@@ -48,7 +48,8 @@ var ChartPanel = React.createClass({
         };
         
         var chartOptions = {
-            animation: false
+            animation: false,
+            responsive: true
         };
         
         return (
