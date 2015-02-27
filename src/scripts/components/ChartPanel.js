@@ -1,10 +1,7 @@
 'use strict';
 
 var React = require('react/addons'),
-    $ = require('jquery'),
     injectTapEventPlugin = require("react-tap-event-plugin"),
-    mui = require('material-ui'),
-    moment = require('moment'),
     LineChart = require("react-chartjs").Line;
 injectTapEventPlugin();
 

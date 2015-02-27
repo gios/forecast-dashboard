@@ -2,7 +2,6 @@
 
 var React = require('react/addons'),
     Skycons = require("../../scripts/assets/skycons.js"),
-    $ = require('jquery'),
     injectTapEventPlugin = require("react-tap-event-plugin"),
     mui = require('material-ui'),
     Slider = mui.Slider;
