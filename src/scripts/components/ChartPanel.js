@@ -47,9 +47,13 @@ var ChartPanel = React.createClass({
             ]
         };
         
+        var chartOptions = {
+            animation: false
+        };
+        
         return (
             <div>
-                <LineChart data={chartData} width="1400" height="250" redraw />
+                <LineChart data={chartData} options={chartOptions} width="1400" height="250" redraw />
             </div>
         );
     }
