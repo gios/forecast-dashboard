@@ -12,6 +12,7 @@ var koa = require('koa'),
 // Middleware
 app.use(logger());
 app.use(bodyParser());
+app.use(serve('dist'));
 
 // Forecast API
 var forecast = new Forecast({
@@ -26,7 +27,6 @@ var forecast = new Forecast({
 });
 
 // Functions
-
 function getForecastData(coords) {
     return function(callback) {
         forecast.get(coords, callback);
