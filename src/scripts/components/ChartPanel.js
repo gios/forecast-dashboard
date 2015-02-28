@@ -6,12 +6,14 @@ var React = require('react/addons'),
     LineChart = require("react-chartjs").Line;
 injectTapEventPlugin();
 
+Chart.defaults.global.maintainAspectRatio = false;
+Chart.defaults.global.animation = false;
+
 require('../../styles/ChartPanel.less');
 
 var ChartPanel = React.createClass({
     
     render: function () {
-        Chart.defaults.global.responsive = true;
         
         var temperatureMin = this.props.daily.map(function (l) {
             return l.temperatureMin;
@@ -47,13 +49,9 @@ var ChartPanel = React.createClass({
             ]
         };
         
-        var chartOptions = {
-            animation: false
-        };
-        
         return (
             <div>
-                <LineChart data={chartData} options={chartOptions} width="1400" height="250" redraw />
+                <LineChart className="ChartPanel" data={chartData} width="1400" height="250" redraw />
             </div>
         );
     }
