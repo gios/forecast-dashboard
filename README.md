@@ -10,7 +10,7 @@ Project for weather forecast in Real-Time
 
 ### Technologies
 
-* [React] - "A javascript library for building user interfaces"!
+* [React] - A javascript library for building user interfaces!
 * [Grunt] - The JavaScript Task Runner
 * [material ui] - A CSS Framework and a Set of React Components that Implement Google's Material Design
 * [jQuery] - is a fast, small, and feature-rich JavaScript library
