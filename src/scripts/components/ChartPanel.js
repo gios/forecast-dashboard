@@ -6,8 +6,8 @@ var React = require('react/addons'),
     LineChart = require("react-chartjs").Line;
 injectTapEventPlugin();
 
-Chart.defaults.global.maintainAspectRatio = false;
 Chart.defaults.global.animation = false;
+Chart.defaults.global.responsive = true;
 
 require('../../styles/ChartPanel.less');
 
