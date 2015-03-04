@@ -33,6 +33,30 @@ Run unit testing with Karma test runner:
 $ grunt test
 ```
 
+### How to Run
+
+Clone repository:
+```sh
+$ git clone https://github.com/gios/forecast-dashboard.git
+```
+
+Install dependencies:
+```sh
+$ npm i
+```
+
+Start server in terminal:
+```sh
+$ node server
+or
+$ iojs server
+```
+
+Start client in other terminal or tab:
+```sh
+$ grunt serve
+```
+
 [React]:http://facebook.github.io/react/
 [Grunt]:http://gruntjs.com/
 [material ui]:http://callemall.github.io/material-ui/#/
