@@ -57,6 +57,10 @@ Start client in other terminal or tab:
 $ grunt serve
 ```
 
+### How to Run (Simple)
+
+Run start.bat
+
 [React]:http://facebook.github.io/react/
 [Grunt]:http://gruntjs.com/
 [material ui]:http://callemall.github.io/material-ui/#/
