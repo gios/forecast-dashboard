@@ -41,5 +41,5 @@ function* getData(data, next) {
 
 // Routes
 app.use(route.get('/forecast/:coords', getData));
-
+console.log("Start server...");
 app.listen(process.env.PORT || 3000);
