@@ -1,2 +1,2 @@
-start node server
+start node server_koa
 start grunt serve
