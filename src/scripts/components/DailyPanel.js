@@ -33,7 +33,7 @@ var DailyPanel = React.createClass({
                         <p><strong>Time</strong> (Час) :&nbsp;&nbsp;</p>
                         <p>{self.getCurrentlyDate(l.time)}</p>
                         <p><strong>Summary</strong> (Резюме) :&nbsp;&nbsp;</p>
-                        <p>{l.summary}</p>
+                        <p id='summaryText'>{l.summary}</p>
                     </div>
                     <table className="forecastDailyInfo">
                         <tr>
