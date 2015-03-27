@@ -87,7 +87,7 @@ var ToolbarPanel = React.createClass({
         return (
             <div className="ToolbarPanel">
                 <Toolbar>
-                    <ToolbarGroup float="left">
+                    <ToolbarGroup float="left" className="toolbarMenu">
                         <DropDownMenu onChange={this._toolbarMenu} menuItems={filterOptions} />
                     </ToolbarGroup>
                     <ToolbarGroup float="right">
