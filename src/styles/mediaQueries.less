@@ -1,9 +1,10 @@
-/*  Sony Xperia Z, Z1
+/*  
+    Sony Xperia Z, Z1
     Samsung Galaxy S4
     Google Nexus 5
 */
 
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
     html {
         overflow-x: hidden;
     }
@@ -63,8 +64,70 @@
     }
 }
 
-// Google Nexus 4
-@media screen and (device-width: 384px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+@media screen and (device-width: 640px) and (device-height: 360px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        position: relative;
+        margin-left: 18%;
+    }
+    .longitude {
+        position: relative;
+        margin-top: 2%;
+        margin-left: 8%;
+    }
+    .searchLocationButton {
+        position: absolute;
+        top: 1em;
+        left: 20%;
+    }
+    .GlobalSummaryPanel {
+        width: 50em;
+        margin-bottom: 11em;
+    }
+    .flex1 {
+        position: relative;
+        top: 1.5em;
+        display: flex;
+        flex: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 1px;
+    }
+    .flex2 {
+        display: flex;
+        flex: none;
+        flex-direction: column-reverse;
+    }
+    .containerSecondary {
+        position: absolute;
+        display: flex;
+        flex: none;
+        left: 0;
+        flex-direction: column-reverse;
+    }
+    .chartContent {
+        position: absolute;
+        bottom: 9em;
+        width: 100%;
+        height: 100%;
+    }
+    .forecastDaily {
+        position: relative;
+        float: left;
+    }
+    .forecastDailyInfo {
+        position: relative;
+        float: left;
+        left: 0;
+    }
+}
+
+/*  
+    Google Nexus 4
+*/
+@media screen and (device-width: 384px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
     html {
         overflow-x: hidden;
     }
@@ -124,8 +187,71 @@
     }
 }
 
-// Samsung Galaxy S3
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+@media screen and (device-width: 640px) and (device-height: 384px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        position: relative;
+        margin-left: 18%;
+    }
+    .longitude {
+        position: relative;
+        margin-top: 2%;
+        margin-left: 8%;
+    }
+    .searchLocationButton {
+        position: absolute;
+        top: 1em;
+        left: 20%;
+    }
+    .GlobalSummaryPanel {
+        width: 50em;
+        margin-bottom: 11em;
+    }
+    .flex1 {
+        position: relative;
+        top: 1.5em;
+        display: flex;
+        flex: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 1px;
+    }
+    .flex2 {
+        display: flex;
+        flex: none;
+        flex-direction: column-reverse;
+    }
+    .containerSecondary {
+        position: absolute;
+        display: flex;
+        flex: none;
+        left: 0;
+        flex-direction: column-reverse;
+    }
+    .chartContent {
+        position: absolute;
+        bottom: 9em;
+        width: 100%;
+        height: 100%;
+    }
+    .forecastDaily {
+        position: relative;
+        float: left;
+    }
+    .forecastDailyInfo {
+        position: relative;
+        float: left;
+        left: 0;
+    }
+}
+
+/*  
+    Samsung Galaxy S3
+    Galaxy Nexus
+*/
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
     html {
         overflow-x: hidden;
     }
@@ -171,6 +297,66 @@
     .chartContent {
         position: absolute;
         bottom: 6em;
+        width: 100%;
+        height: 100%;
+    }
+    .forecastDaily {
+        position: relative;
+        float: left;
+    }
+    .forecastDailyInfo {
+        position: relative;
+        float: left;
+        left: 0;
+    }
+}
+
+@media screen and (device-width: 640px) and (device-height: 360px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        position: relative;
+        margin-left: 18%;
+    }
+    .longitude {
+        position: relative;
+        margin-top: 2%;
+        margin-left: 8%;
+    }
+    .searchLocationButton {
+        position: absolute;
+        top: 1em;
+        left: 20%;
+    }
+    .GlobalSummaryPanel {
+        width: 50em;
+        margin-bottom: 11em;
+    }
+    .flex1 {
+        position: relative;
+        top: 1.5em;
+        display: flex;
+        flex: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 1px;
+    }
+    .flex2 {
+        display: flex;
+        flex: none;
+        flex-direction: column-reverse;
+    }
+    .containerSecondary {
+        position: absolute;
+        display: flex;
+        flex: none;
+        left: 0;
+        flex-direction: column-reverse;
+    }
+    .chartContent {
+        position: absolute;
+        bottom: 9em;
         width: 100%;
         height: 100%;
     }
