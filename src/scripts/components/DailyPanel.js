@@ -15,6 +15,12 @@ require('../../styles/DailyPanel.less');
 
 var DailyPanel = React.createClass({
     
+    componentDidUpdate: function (element) {
+        if (typeof element.daily[0] !== 'undefined') {
+            this.refs.changeIcon.runWeatherIcon();
+        }
+    },
+    
     getCurrentlyDate: function (time) {
         return moment.unix(time).format("MMMM Do YYYY, h:mm:ss");
     },
@@ -23,13 +29,17 @@ var DailyPanel = React.createClass({
         return moment.unix(time).format("h:mm:ss");
     },
     
+    _changeSkyconsIcon: function (tabIndex, tab) {
+        this.refs.changeIcon.runWeatherIcon();
+    },
+    
     render: function () {
         var self = this;
         var forecastDaily = this.props.daily.map(function (l) {
             return (
                 <div>
                     <div className="forecastDaily">
-                        <SkyconsPanel iconElement="daily" iconType={l.icon} />
+                        <SkyconsPanel iconElement="daily" iconType={l.icon} ref="changeIcon" />
                         <p title='Час'><strong>Time</strong>:&nbsp;&nbsp;</p>
                         <p>{self.getCurrentlyDate(l.time)}</p>
                         <p title='Резюме'><strong>Summary</strong>:&nbsp;&nbsp;</p>
@@ -131,7 +141,7 @@ var DailyPanel = React.createClass({
         
         return (
             <div className="DailyPanel">
-                <Tabs>
+                <Tabs onChange={this._changeSkyconsIcon}>
                     <Tab label="Day 1">
                         <div className="tab-template-container">
                             <h2 className="mui-font-style-headline">Forecast for Day 1</h2>

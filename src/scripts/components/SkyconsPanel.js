@@ -22,10 +22,15 @@ var SkyconsPanel = React.createClass({
     },
     
     componentDidMount: function() {
-        setInterval(() => {
+        this.runWeatherIcon();
+        setInterval(this.runWeatherIcon, 10000);
+    },
+    
+    runWeatherIcon: function () {
+        setTimeout(() => {
             this.getIconComponents();
             this.getWeatherIcon();
-        }, 1000);
+        }, 100);
     },
     
     getIconComponents: function() {

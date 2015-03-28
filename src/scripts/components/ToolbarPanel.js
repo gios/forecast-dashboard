@@ -44,6 +44,10 @@ var ToolbarPanel = React.createClass({
     _handleClick: function () {
         this.refs.forecastProcessed.show();
         this.props.replaceCoords(this.refs.latitude.getValue(), this.refs.longitude.getValue());
+        setTimeout(() => {
+            this.props.loadForecastFromServer();
+            this.refs.forecastProcessed.dismiss();
+        }, 100);
     },
     
     _toolbarMenu: function (e, selectedIndex, menuItem) {
@@ -103,7 +107,7 @@ var ToolbarPanel = React.createClass({
                     Simple forecast-dashboard app with forecast.io API
                 </Dialog>
                 <Dialog ref="versionDialog" title="Forecast Dashboard - Gios" actions={menuActions}>
-                    3/28/2015 - Version 1.2.0
+                    3/28/2015 - Version 1.5.0
                 </Dialog>
             </div>
         );

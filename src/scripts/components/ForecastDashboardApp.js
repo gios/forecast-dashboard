@@ -54,7 +54,7 @@ var ForecastDashboardApp = React.createClass({
         });
     },
     
-    getMyGeolocation: function () {
+    getMyGeolocation: function (callback) {
         var self = this;
         
         if (!navigator.geolocation) {
@@ -70,6 +70,7 @@ var ForecastDashboardApp = React.createClass({
                 latitude: latitude,
                 longitude: longitude
             });
+            callback();
         }
 
         function error() {
@@ -84,7 +85,9 @@ var ForecastDashboardApp = React.createClass({
     },
     
     componentDidMount: function() {
-        this.loadForecastFromServer();
+        this.getMyGeolocation(() => {
+            this.loadForecastFromServer();
+        });
         setInterval(this.loadForecastFromServer, this.props.pollInterval);
     },
     
@@ -98,7 +101,7 @@ var ForecastDashboardApp = React.createClass({
     render: function () {
         return (
             <div className='main'>
-            <ToolbarPanel replaceCoords={this.replaceCoords} />
+            <ToolbarPanel replaceCoords={this.replaceCoords} loadForecastFromServer={this.loadForecastFromServer} />
                 <div className="containerGlobal">
                     <div className="flex1">
                         <GlobalSummaryPanel data={this.state.data} currently={this.state.currently} />

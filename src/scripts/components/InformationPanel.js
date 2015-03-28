@@ -32,9 +32,14 @@ var InformationPanel = React.createClass({
     },
     
     componentDidMount: function() {
-        setInterval(() => {
+        this.runCurrentlyComponents();
+        setInterval(this.runCurrentlyComponents, 10000);
+    },
+    
+    runCurrentlyComponents: function () {
+        setTimeout(() => {
             this.getCurrentlyComponents();
-        }, 1000);
+        }, 100);
     },
     
     getCurrentlyComponents: function () {
