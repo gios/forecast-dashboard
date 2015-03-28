@@ -8,6 +8,8 @@ var ForecastDashboardApp = require('./ForecastDashboardApp'),
 
 var content = document.getElementById('content');
 
+require('../../styles/mediaQueries.less');
+
 var Routes = (
     <Route handler={ForecastDashboardApp}>
         <Route name="other" handler = {ForecastDashboardApp} />

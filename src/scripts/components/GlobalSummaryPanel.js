@@ -16,8 +16,12 @@ require('../../styles/GlobalSummaryPanel.less');
 
 var GlobalSummaryPanel = React.createClass({
     
+    getCurrentlyDate: function () {
+        return moment.unix(this.props.currently.time).format("MMMM Do YYYY");
+    },
+    
     getCurrentlyTime: function () {
-        return moment.unix(this.props.currently.time).format("MMMM Do YYYY, h:mm:ss");
+        return moment.unix(this.props.currently.time).format("h:mm:ss");
     },
     
     render: function () {
@@ -26,6 +30,7 @@ var GlobalSummaryPanel = React.createClass({
                 <Paper zDepth={1}>
                     <h1>{this.props.data.timezone}</h1>
                     <SkyconsPanel iconElement="icon1" iconType={this.props.currently.icon} />
+                    <h2>{this.getCurrentlyDate()}</h2>
                     <h2>{this.getCurrentlyTime()}</h2>
                     <InformationPanel currently={this.props.currently} />
                 </Paper>

@@ -28,100 +28,100 @@ var DailyPanel = React.createClass({
         var forecastDaily = this.props.daily.map(function (l) {
             return (
                 <div>
-                <SkyconsPanel iconElement="daily" iconType={l.icon} />
                     <div className="forecastDaily">
-                        <p><strong>Time</strong> (Час) :&nbsp;&nbsp;</p>
+                        <SkyconsPanel iconElement="daily" iconType={l.icon} />
+                        <p title='Час'><strong>Time</strong>:&nbsp;&nbsp;</p>
                         <p>{self.getCurrentlyDate(l.time)}</p>
-                        <p><strong>Summary</strong> (Резюме) :&nbsp;&nbsp;</p>
+                        <p title='Резюме'><strong>Summary</strong>:&nbsp;&nbsp;</p>
                         <p id='summaryText'>{l.summary}</p>
                     </div>
                     <table className="forecastDailyInfo">
                         <tr>
-                            <td><strong>Sunrise Time</strong> (Час сходу) :&nbsp;&nbsp;</td>
+                            <td title='Час сходу'><strong>Sunrise Time</strong>:&nbsp;&nbsp;</td>
                             <td>{self.getCurrentlyTime(l.sunriseTime)}</td>
                         </tr>
                         <tr>
-                            <td><strong>Sunset Time</strong> (Час заходу) :&nbsp;&nbsp;</td>
+                            <td title='Час заходу'><strong>Sunset Time</strong>:&nbsp;&nbsp;</td>
                             <td>{self.getCurrentlyTime(l.sunsetTime)}</td>
                         </tr>
                         <tr>
-                            <td><strong>Moon Phase</strong> (Фаза Місяця) :&nbsp;&nbsp;</td>
+                            <td title='Фаза Місяця'><strong>Moon Phase</strong>:&nbsp;&nbsp;</td>
                             <td>{l.moonPhase}</td>
                         </tr>
                         <tr>
-                            <td><strong>Precip Intensity</strong> (Інтенсивність опадів) :&nbsp;&nbsp;</td>
+                            <td title='Інтенсивність опадів'><strong>Precip Intensity</strong>:&nbsp;&nbsp;</td>
                             <td>{l.precipIntensity}</td>
                         </tr>
                         <tr>
-                            <td><strong>Precip Intensity Max</strong> (Максимальна інтенсивність опадів) :&nbsp;&nbsp;</td>
+                            <td title='Максимальна інтенсивність опадів'><strong>Precip Intensity Max</strong>:&nbsp;&nbsp;</td>
                             <td>{l.precipIntensityMax}</td>
                         </tr>
                         <tr>
-                            <td><strong>Precip Probability</strong> (Імовірність опадів) :&nbsp;&nbsp;</td>
+                            <td title='Імовірність опадів'><strong>Precip Probability</strong>:&nbsp;&nbsp;</td>
                             <td>{l.precipProbability}</td>
                         </tr>
                         <tr>
-                            <td><strong>Precip Type</strong> (Тип опадів) :&nbsp;&nbsp;</td>
+                            <td title='Тип опадів'><strong>Precip Type</strong>:&nbsp;&nbsp;</td>
                             <td>{l.precipType}</td>
                         </tr>
                         <tr>
-                            <td><strong>Temperature Min</strong> (Мінімальна температура) :&nbsp;&nbsp;</td>
+                            <td title='Мінімальна температура'><strong>Temperature Min</strong>:&nbsp;&nbsp;</td>
                             <td>{l.temperatureMin}</td>
                         </tr>
                         <tr>
-                            <td><strong>Temperature Min Time</strong> (Час мінімальної температури) :&nbsp;&nbsp;</td>
+                            <td title='Час мінімальної температури'><strong>Temperature Min Time</strong>:&nbsp;&nbsp;</td>
                             <td>{self.getCurrentlyTime(l.temperatureMinTime)}</td>
                         </tr>
                         <tr>
-                            <td><strong>Temperature Max</strong> (Максимальна температура) :&nbsp;&nbsp;</td>
+                            <td title='Максимальна температура'><strong>Temperature Max</strong>:&nbsp;&nbsp;</td>
                             <td>{l.temperatureMax}</td>
                         </tr>
                         <tr>
-                            <td><strong>Temperature Max Time</strong> (Час максимальної температури) :&nbsp;&nbsp;</td>
+                            <td title='Час максимальної температури'><strong>Temperature Max Time</strong>:&nbsp;&nbsp;</td>
                             <td>{self.getCurrentlyTime(l.temperatureMaxTime)}</td>
                         </tr>
                         <tr>
-                            <td><strong>Apparent Temperature Min</strong> (Удавана мінімальна температура) :&nbsp;&nbsp;</td>
+                            <td title='Удавана мінімальна температура'><strong>Apparent Temperature Min</strong>:&nbsp;&nbsp;</td>
                             <td>{l.apparentTemperatureMin}</td>
                         </tr>
                         <tr>
-                            <td><strong>Apparent Temperature Min Time</strong> (Час удаваної мінімальної температури) :&nbsp;&nbsp;</td>
+                            <td title='Час удаваної мінімальної температури'><strong>Apparent Temperature Min Time</strong>:&nbsp;&nbsp;</td>
                             <td>{self.getCurrentlyTime(l.apparentTemperatureMinTime)}</td>
                         </tr>
                         <tr>
-                            <td><strong>Apparent Temperature Max</strong> (Удавана максимальна температура) :&nbsp;&nbsp;</td>
+                            <td title='Удавана максимальна температура'><strong>Apparent Temperature Max</strong>:&nbsp;&nbsp;</td>
                             <td>{l.apparentTemperatureMax}</td>
                         </tr>
                         <tr>
-                            <td><strong>Apparent Temperature Max Time</strong> (Час удаваної максимальної температури) :&nbsp;&nbsp;</td>
+                            <td title='Час удаваної максимальної температури'><strong>Apparent Temperature Max Time</strong>:&nbsp;&nbsp;</td>
                             <td>{self.getCurrentlyTime(l.apparentTemperatureMaxTime)}</td>
                         </tr>
                         <tr>
-                            <td><strong>Dew Point</strong> (Точка роси) :&nbsp;&nbsp;</td>
+                            <td title='Точка роси'><strong>Dew Point</strong>:&nbsp;&nbsp;</td>
                             <td>{l.dewPoint}</td>
                         </tr>
                         <tr>
-                            <td><strong>Humidity</strong> (Вологість) :&nbsp;&nbsp;</td>
+                            <td title='Вологість'><strong>Humidity</strong>:&nbsp;&nbsp;</td>
                             <td>{l.humidity}</td>
                         </tr>
                         <tr>
-                            <td><strong>Wind Speed</strong> (Швидкість вітру) :&nbsp;&nbsp;</td>
+                            <td title='Швидкість вітру'><strong>Wind Speed</strong>:&nbsp;&nbsp;</td>
                             <td>{l.windSpeed}</td>
                         </tr>
                         <tr>
-                            <td><strong>Wind Bearing</strong> (Орієнтація вітру) :&nbsp;&nbsp;</td>
+                            <td title='Орієнтація вітру'><strong>Wind Bearing</strong>:&nbsp;&nbsp;</td>
                             <td>{l.windBearing}</td>
                         </tr>
                         <tr>
-                            <td><strong>Cloud Cover</strong> (Хмарний покрив) :&nbsp;&nbsp;</td>
+                            <td title='Хмарний покрив'><strong>Cloud Cover</strong>:&nbsp;&nbsp;</td>
                             <td>{l.cloudCover}</td>
                         </tr>
                         <tr>
-                            <td><strong>Pressure</strong> (Тиск) :&nbsp;&nbsp;</td>
+                            <td title='Тиск'><strong>Pressure</strong>:&nbsp;&nbsp;</td>
                             <td>{l.pressure}</td>
                         </tr>
                         <tr>
-                            <td><strong>Ozone</strong> (Озон) :&nbsp;&nbsp;</td>
+                            <td title='Озон'><strong>Ozone</strong>:&nbsp;&nbsp;</td>
                             <td>{l.ozone}</td>
                         </tr>
                     </table>

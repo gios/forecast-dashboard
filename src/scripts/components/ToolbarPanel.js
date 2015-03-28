@@ -95,8 +95,7 @@ var ToolbarPanel = React.createClass({
                         onChange={this._latitudeHandleFloatingErrorInputChange} />
                         <TextField ref="longitude" className="longitude" hintText="Enter longitude" errorText={this.state.longitudeFloatingErrorText}
                         onChange={this._longitudeHandleFloatingErrorInputChange}/>
-                        <span className="mui-toolbar-separator">&nbsp;</span>
-                        <RaisedButton onTouchTap={this._handleClick} label="Search Location" secondary={true} />
+                        <RaisedButton className="searchLocationButton" onTouchTap={this._handleClick} label="Search Location" secondary={true} />
                         <Snackbar ref="forecastProcessed" message="Your forecast processed..." />
                     </ToolbarGroup>
                 </Toolbar>
@@ -104,7 +103,7 @@ var ToolbarPanel = React.createClass({
                     Simple forecast-dashboard app with forecast.io API
                 </Dialog>
                 <Dialog ref="versionDialog" title="Forecast Dashboard - Gios" actions={menuActions}>
-                    3/27/2015 - Version 1.1.0
+                    3/28/2015 - Version 1.2.0
                 </Dialog>
             </div>
         );
