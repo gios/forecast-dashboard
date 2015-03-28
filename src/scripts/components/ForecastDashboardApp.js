@@ -58,7 +58,7 @@ var ForecastDashboardApp = React.createClass({
         var self = this;
         
         if (!navigator.geolocation) {
-            this.refs.geolocationSupport.show();
+            self.refs.geolocationSupport.show();
             return;
         }
         
@@ -74,7 +74,7 @@ var ForecastDashboardApp = React.createClass({
         }
 
         function error() {
-            this.refs.geolocationError.show();
+            self.refs.geolocationError.show();
         }
         
         navigator.geolocation.getCurrentPosition(success, error);
