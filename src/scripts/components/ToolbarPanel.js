@@ -47,7 +47,7 @@ var ToolbarPanel = React.createClass({
         setTimeout(() => {
             this.props.loadForecastFromServer();
             this.refs.forecastProcessed.dismiss();
-        }, 100);
+        }, 1000);
     },
     
     _toolbarMenu: function (e, selectedIndex, menuItem) {

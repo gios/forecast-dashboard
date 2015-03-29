@@ -3,64 +3,103 @@
     Samsung Galaxy S4
     Google Nexus 5
 */
+.latitudeMixin(@margin-left) {
+    position: relative;
+    margin-left: @margin;
+}
+
+.longitudeMixin(@margin-left) {
+    position: relative;
+    margin-top: 2%;
+    margin-left: @margin;
+}
+
+.searchLocationButtonMixin() {
+    position: absolute;
+    top: 1em;
+    left: 20%;
+}
+
+.GlobalSummaryPanelMixin(@width, @margin-bottom) {
+    width: @width;
+    margin-bottom: @margin;
+}
+
+.flex1Mixin() {
+    position: relative;
+    top: 1.5em;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 1px;
+}
+
+.flex2Mixin() {
+    display: flex;
+    flex: none;
+    flex-direction: column-reverse;
+}
+
+.containerSecondaryMixin() {
+    position: absolute;
+    display: flex;
+    flex: none;
+    left: 0;
+    flex-direction: column-reverse;
+}
+
+.chartContentMixin(@bottom) {
+    position: absolute;
+    bottom: @bottom;
+    width: 100%;
+    height: 100%;
+}
+
+.forecastDailyMixin() {
+    position: relative;
+    float: left;
+}
+
+.forecastDailyInfoMixin() {
+    position: relative;
+    float: left;
+    left: 0;
+}
 
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
     html {
         overflow-x: hidden;
     }
     .latitude {
-        position: relative;
-        margin-left: 15%;
+        .latitudeMixin(15%);
     }
     .longitude {
-        position: relative;
-        margin-top: 2%;
-        margin-left: 5%;
+        .longitudeMixin(5%);
     }
     .searchLocationButton {
-        position: absolute;
-        top: 1em;
-        left: 20%;
+        .searchLocationButtonMixin();
     }
     .GlobalSummaryPanel {
-        width: 27.5em;
-        margin-bottom: 8em;
+        .GlobalSummaryPanelMixin(27.5em, 8em);
     }
     .flex1 {
-        position: relative;
-        top: 1.5em;
-        display: flex;
-        flex: none;
-        flex-direction: column;
-        text-align: center;
-        padding: 1px;
+        .flex1Mixin();
     }
     .flex2 {
-        display: flex;
-        flex: none;
-        flex-direction: column-reverse;
+        .flex2Mixin();
     }
     .containerSecondary {
-        position: absolute;
-        display: flex;
-        flex: none;
-        left: 0;
-        flex-direction: column-reverse;
+        .containerSecondaryMixin();
     }
     .chartContent {
-        position: absolute;
-        bottom: 6em;
-        width: 100%;
-        height: 100%;
+        .chartContentMixin(6em);
     }
     .forecastDaily {
-        position: relative;
-        float: left;
+        .forecastDailyMixin();
     }
     .forecastDailyInfo {
-        position: relative;
-        float: left;
-        left: 0;
+        .forecastDailyInfoMixin();
     }
 }
 
@@ -69,58 +108,34 @@
         overflow-x: hidden;
     }
     .latitude {
-        position: relative;
-        margin-left: 18%;
+        .latitudeMixin(18%);
     }
     .longitude {
-        position: relative;
-        margin-top: 2%;
-        margin-left: 8%;
+        .longitudeMixin(8%);
     }
     .searchLocationButton {
-        position: absolute;
-        top: 1em;
-        left: 20%;
+        .searchLocationButtonMixin();
     }
     .GlobalSummaryPanel {
-        width: 50em;
-        margin-bottom: 11em;
+        .GlobalSummaryPanelMixin(50em, 11em);
     }
     .flex1 {
-        position: relative;
-        top: 1.5em;
-        display: flex;
-        flex: none;
-        flex-direction: column;
-        text-align: center;
-        padding: 1px;
+        .flex1Mixin();
     }
     .flex2 {
-        display: flex;
-        flex: none;
-        flex-direction: column-reverse;
+        .flex2Mixin();
     }
     .containerSecondary {
-        position: absolute;
-        display: flex;
-        flex: none;
-        left: 0;
-        flex-direction: column-reverse;
+        .containerSecondaryMixin();
     }
     .chartContent {
-        position: absolute;
-        bottom: 9em;
-        width: 100%;
-        height: 100%;
+        .chartContentMixin(9em);
     }
     .forecastDaily {
-        position: relative;
-        float: left;
+        .forecastDailyMixin();
     }
     .forecastDailyInfo {
-        position: relative;
-        float: left;
-        left: 0;
+        .forecastDailyInfoMixin();
     }
 }
 
@@ -132,58 +147,34 @@
         overflow-x: hidden;
     }
     .latitude {
-        position: relative;
-        margin-left: 15%;
+        .latitudeMixin(15%);
     }
     .longitude {
-        position: relative;
-        margin-top: 2%;
-        margin-left: 5%;
+        .longitudeMixin(5%);
     }
     .searchLocationButton {
-        position: absolute;
-        top: 1em;
-        left: 20%;
+        .searchLocationButtonMixin();
     }
     .GlobalSummaryPanel {
-        width: 29.5em;
-        margin-bottom: 8em;
+        .GlobalSummaryPanelMixin(29.5em, 8em);
     }
     .flex1 {
-        position: relative;
-        top: 1.5em;
-        display: flex;
-        flex: none;
-        flex-direction: column;
-        text-align: center;
-        padding: 1px;
+        .flex1Mixin();
     }
     .flex2 {
-        display: flex;
-        flex: none;
-        flex-direction: column-reverse;
+        .flex2Mixin();
     }
     .containerSecondary {
-        position: absolute;
-        display: flex;
-        flex: none;
-        left: 0;
-        flex-direction: column-reverse;
+        .containerSecondaryMixin();
     }
     .chartContent {
-        position: absolute;
-        bottom: 6em;
-        width: 100%;
-        height: 100%;
+        .chartContentMixin(6em);
     }
     .forecastDaily {
-        position: relative;
-        float: left;
+        .forecastDailyMixin();
     }
     .forecastDailyInfo {
-        position: relative;
-        float: left;
-        left: 0;
+        .forecastDailyInfoMixin();
     }
 }
 
@@ -192,58 +183,34 @@
         overflow-x: hidden;
     }
     .latitude {
-        position: relative;
-        margin-left: 18%;
+        .latitudeMixin(18%);
     }
     .longitude {
-        position: relative;
-        margin-top: 2%;
-        margin-left: 8%;
+        .longitudeMixin(8%);
     }
     .searchLocationButton {
-        position: absolute;
-        top: 1em;
-        left: 20%;
+        .searchLocationButtonMixin();
     }
     .GlobalSummaryPanel {
-        width: 50em;
-        margin-bottom: 11em;
+        .GlobalSummaryPanelMixin(50em, 11em);
     }
     .flex1 {
-        position: relative;
-        top: 1.5em;
-        display: flex;
-        flex: none;
-        flex-direction: column;
-        text-align: center;
-        padding: 1px;
+        .flex1Mixin();
     }
     .flex2 {
-        display: flex;
-        flex: none;
-        flex-direction: column-reverse;
+        .flex2Mixin();
     }
     .containerSecondary {
-        position: absolute;
-        display: flex;
-        flex: none;
-        left: 0;
-        flex-direction: column-reverse;
+        .containerSecondaryMixin();
     }
     .chartContent {
-        position: absolute;
-        bottom: 9em;
-        width: 100%;
-        height: 100%;
+        .chartContentMixin(9em);
     }
     .forecastDaily {
-        position: relative;
-        float: left;
+        .forecastDailyMixin();
     }
     .forecastDailyInfo {
-        position: relative;
-        float: left;
-        left: 0;
+        .forecastDailyInfoMixin();
     }
 }
 
@@ -256,58 +223,34 @@
         overflow-x: hidden;
     }
     .latitude {
-        position: relative;
-        margin-left: 15%;
+        .latitudeMixin(15%);
     }
     .longitude {
-        position: relative;
-        margin-top: 2%;
-        margin-left: 5%;
+        .longitudeMixin(5%);
     }
     .searchLocationButton {
-        position: absolute;
-        top: 1em;
-        left: 20%;
+        .searchLocationButtonMixin();
     }
     .GlobalSummaryPanel {
-        width: 28em;
-        margin-bottom: 8em;
+        .GlobalSummaryPanelMixin(28em, 8em);
     }
     .flex1 {
-        position: relative;
-        top: 1.5em;
-        display: flex;
-        flex: none;
-        flex-direction: column;
-        text-align: center;
-        padding: 1px;
+        .flex1Mixin();
     }
     .flex2 {
-        display: flex;
-        flex: none;
-        flex-direction: column-reverse;
+        .flex2Mixin();
     }
     .containerSecondary {
-        position: absolute;
-        display: flex;
-        flex: none;
-        left: 0;
-        flex-direction: column-reverse;
+        .containerSecondaryMixin();
     }
     .chartContent {
-        position: absolute;
-        bottom: 6em;
-        width: 100%;
-        height: 100%;
+        .chartContentMixin(6em);
     }
     .forecastDaily {
-        position: relative;
-        float: left;
+        .forecastDailyMixin();
     }
     .forecastDailyInfo {
-        position: relative;
-        float: left;
-        left: 0;
+        .forecastDailyInfoMixin();
     }
 }
 
@@ -316,57 +259,33 @@
         overflow-x: hidden;
     }
     .latitude {
-        position: relative;
-        margin-left: 18%;
+        .latitudeMixin(18%);
     }
     .longitude {
-        position: relative;
-        margin-top: 2%;
-        margin-left: 8%;
+        .longitudeMixin(8%);
     }
     .searchLocationButton {
-        position: absolute;
-        top: 1em;
-        left: 20%;
+        .searchLocationButtonMixin();
     }
     .GlobalSummaryPanel {
-        width: 50em;
-        margin-bottom: 11em;
+        .GlobalSummaryPanelMixin(50em, 11em);
     }
     .flex1 {
-        position: relative;
-        top: 1.5em;
-        display: flex;
-        flex: none;
-        flex-direction: column;
-        text-align: center;
-        padding: 1px;
+        .flex1Mixin();
     }
     .flex2 {
-        display: flex;
-        flex: none;
-        flex-direction: column-reverse;
+        .flex2Mixin();
     }
     .containerSecondary {
-        position: absolute;
-        display: flex;
-        flex: none;
-        left: 0;
-        flex-direction: column-reverse;
+        .containerSecondaryMixin();
     }
     .chartContent {
-        position: absolute;
-        bottom: 9em;
-        width: 100%;
-        height: 100%;
+        .chartContentMixin(9em);
     }
     .forecastDaily {
-        position: relative;
-        float: left;
+        .forecastDailyMixin();
     }
     .forecastDailyInfo {
-        position: relative;
-        float: left;
-        left: 0;
+        .forecastDailyInfoMixin();
     }
 }
