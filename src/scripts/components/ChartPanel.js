@@ -12,17 +12,17 @@ Chart.defaults.global.responsive = true;
 require('../../styles/ChartPanel.less');
 
 var ChartPanel = React.createClass({
-    
+
     render: function () {
-        
+
         var temperatureMin = this.props.daily.map(function (l) {
             return l.temperatureMin;
         });
-        
+
         var temperatureMax = this.props.daily.map(function (l) {
             return l.temperatureMax;
         });
-        
+
         var chartData = {
             labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8"],
             datasets: [
@@ -48,7 +48,7 @@ var ChartPanel = React.createClass({
                 }
             ]
         };
-        
+
         return (
             <div>
                 <LineChart className="ChartPanel" data={chartData} width="1400" height="250" redraw />
@@ -57,5 +57,4 @@ var ChartPanel = React.createClass({
     }
 });
 
-module.exports = ChartPanel; 
-
+module.exports = ChartPanel;
