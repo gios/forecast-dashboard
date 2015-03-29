@@ -16,6 +16,10 @@ require('../../styles/ToolbarPanel.less');
 
 var ToolbarPanel = React.createClass({
     
+    componentDidMount: function () {
+        document.addEventListener('keypress', this._handleEnterKey);
+    },
+    
     getInitialState: function () {
         return {
             latitudeErrorText: 'This field must be numeric.',
@@ -61,10 +65,15 @@ var ToolbarPanel = React.createClass({
             this.refs.versionDialog.show();
             break;
         default:
-            console.log("_toolbarMenu - invalid selectedIndex");
+            console.log('_toolbarMenu - invalid selectedIndex');
         }
     },
 
+    _handleEnterKey: function (e) {
+        if (e.keyCode === 13) {
+            this._handleClick();
+        }
+    },
     render: function () {
         
         var menuActions = [
@@ -98,7 +107,7 @@ var ToolbarPanel = React.createClass({
                         <TextField ref="latitude" className="latitude" hintText="Enter latitude" errorText={this.state.latitudeFloatingErrorText}
                         onChange={this._latitudeHandleFloatingErrorInputChange} />
                         <TextField ref="longitude" className="longitude" hintText="Enter longitude" errorText={this.state.longitudeFloatingErrorText}
-                        onChange={this._longitudeHandleFloatingErrorInputChange}/>
+                        onChange={this._longitudeHandleFloatingErrorInputChange} />
                         <RaisedButton className="searchLocationButton" onTouchTap={this._handleClick} label="Search Location" secondary={true} />
                         <Snackbar ref="forecastProcessed" message="Your forecast processed..." />
                     </ToolbarGroup>

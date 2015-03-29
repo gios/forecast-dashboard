@@ -92,7 +92,7 @@ var ForecastDashboardApp = React.createClass({
     },
     
     replaceCoords: function(latitude, longitude) {
-        this.replaceState({
+        this.setState({
             latitude: latitude,
             longitude: longitude
         });
