@@ -1,17 +1,12 @@
-/*  
-    Sony Xperia Z, Z1
-    Samsung Galaxy S4
-    Google Nexus 5
-*/
 .latitudeMixin(@margin-left) {
     position: relative;
-    margin-left: @margin;
+    margin-left: @margin-left;
 }
 
 .longitudeMixin(@margin-left) {
     position: relative;
     margin-top: 2%;
-    margin-left: @margin;
+    margin-left: @margin-left;
 }
 
 .searchLocationButtonMixin() {
@@ -22,7 +17,7 @@
 
 .GlobalSummaryPanelMixin(@width, @margin-bottom) {
     width: @width;
-    margin-bottom: @margin;
+    margin-bottom: @margin-bottom;
 }
 
 .flex1Mixin() {
@@ -67,6 +62,11 @@
     left: 0;
 }
 
+/*  
+    Sony Xperia Z, Z1
+    Samsung Galaxy S4
+    Google Nexus 5
+*/
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
     html {
         overflow-x: hidden;

@@ -68,78 +68,91 @@ var InformationPanel = React.createClass({
                     translateText: 'Інтенсивність опадів'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 2:
                 this.setState({
                     translateText: 'Імовірність опадів'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 3:
                 this.setState({
                     translateText: 'Тип опадів'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 4:
                 this.setState({
                     translateText: 'Температура'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 5:
                 this.setState({
                     translateText: 'Удавана температура'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 6:
                 this.setState({
                     translateText: 'Точка роси'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 7:
                 this.setState({
                     translateText: 'Вологість'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 8:
                 this.setState({
                     translateText: 'Швидкість вітру'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 9:
                 this.setState({
                     translateText: 'Орієнтація вітру'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 10:
                 this.setState({
                     translateText: 'Видимість'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 11:
                 this.setState({
                     translateText: 'Хмарний покрив'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 12:
                 this.setState({
                     translateText: 'Тиск'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             case 13:
                 this.setState({
                     translateText: 'Озон'
                 });
                 this.refs.translateText.show();
+                setTimeout(this.refs.translateText.dismiss, 3000);
                 break;
             default:
                 this.refs.translateText.dismiss();
