@@ -1,5 +1,6 @@
-.latitudeMixin(@margin-left) {
+.latitudeMixin(@margin-top, @margin-left) {
     position: relative;
+    margin-top: @margin-top;
     margin-left: @margin-left;
 }
 
@@ -9,10 +10,10 @@
     margin-left: @margin-left;
 }
 
-.searchLocationButtonMixin() {
+.searchLocationButtonMixin(@left) {
     position: absolute;
     top: 1em;
-    left: 20%;
+    left: @left;
 }
 
 .GlobalSummaryPanelMixin(@width, @margin-bottom) {
@@ -72,13 +73,13 @@
         overflow-x: hidden;
     }
     .latitude {
-        .latitudeMixin(15%);
+        .latitudeMixin(0, 15%);
     }
     .longitude {
         .longitudeMixin(5%);
     }
     .searchLocationButton {
-        .searchLocationButtonMixin();
+        .searchLocationButtonMixin(20%);
     }
     .GlobalSummaryPanel {
         .GlobalSummaryPanelMixin(27.5em, 8em);
@@ -108,13 +109,13 @@
         overflow-x: hidden;
     }
     .latitude {
-        .latitudeMixin(18%);
+        .latitudeMixin(0, 18%);
     }
     .longitude {
         .longitudeMixin(8%);
     }
     .searchLocationButton {
-        .searchLocationButtonMixin();
+        .searchLocationButtonMixin(20%);
     }
     .GlobalSummaryPanel {
         .GlobalSummaryPanelMixin(50em, 11em);
@@ -147,13 +148,13 @@
         overflow-x: hidden;
     }
     .latitude {
-        .latitudeMixin(15%);
+        .latitudeMixin(0, 15%);
     }
     .longitude {
         .longitudeMixin(5%);
     }
     .searchLocationButton {
-        .searchLocationButtonMixin();
+        .searchLocationButtonMixin(20%);
     }
     .GlobalSummaryPanel {
         .GlobalSummaryPanelMixin(29.5em, 8em);
@@ -183,13 +184,13 @@
         overflow-x: hidden;
     }
     .latitude {
-        .latitudeMixin(18%);
+        .latitudeMixin(0, 18%);
     }
     .longitude {
         .longitudeMixin(8%);
     }
     .searchLocationButton {
-        .searchLocationButtonMixin();
+        .searchLocationButtonMixin(20%);
     }
     .GlobalSummaryPanel {
         .GlobalSummaryPanelMixin(50em, 11em);
@@ -223,13 +224,13 @@
         overflow-x: hidden;
     }
     .latitude {
-        .latitudeMixin(15%);
+        .latitudeMixin(0, 15%);
     }
     .longitude {
         .longitudeMixin(5%);
     }
     .searchLocationButton {
-        .searchLocationButtonMixin();
+        .searchLocationButtonMixin(20%);
     }
     .GlobalSummaryPanel {
         .GlobalSummaryPanelMixin(28em, 8em);
@@ -259,13 +260,13 @@
         overflow-x: hidden;
     }
     .latitude {
-        .latitudeMixin(18%);
+        .latitudeMixin(0, 18%);
     }
     .longitude {
         .longitudeMixin(8%);
     }
     .searchLocationButton {
-        .searchLocationButtonMixin();
+        .searchLocationButtonMixin(20%);
     }
     .GlobalSummaryPanel {
         .GlobalSummaryPanelMixin(50em, 11em);
@@ -281,6 +282,306 @@
     }
     .chartContent {
         .chartContentMixin(9em);
+    }
+    .forecastDaily {
+        .forecastDailyMixin();
+    }
+    .forecastDailyInfo {
+        .forecastDailyInfoMixin();
+    }
+}
+
+/*  
+    Apple iPhone 4
+*/
+@media screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        .latitudeMixin(18%, 15%);
+    }
+    .longitude {
+        .longitudeMixin(5%);
+    }
+    .searchLocationButton {
+        .searchLocationButtonMixin(20%);
+    }
+    .GlobalSummaryPanel {
+        .GlobalSummaryPanelMixin(24em, 7em);
+    }
+    .flex1 {
+        .flex1Mixin();
+    }
+    .flex2 {
+        .flex2Mixin();
+    }
+    .containerSecondary {
+        .containerSecondaryMixin();
+    }
+    .chartContent {
+        .chartContentMixin(5em);
+    }
+    .forecastDaily {
+        .forecastDailyMixin();
+    }
+    .forecastDailyInfo {
+        .forecastDailyInfoMixin();
+    }
+}
+
+@media screen and (device-width: 480px) and (device-height: 320px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        .latitudeMixin(0, 18%);
+    }
+    .longitude {
+        .longitudeMixin(8%);
+    }
+    .searchLocationButton {
+        .searchLocationButtonMixin(20%);
+    }
+    .GlobalSummaryPanel {
+        .GlobalSummaryPanelMixin(37em, 9em);
+    }
+    .flex1 {
+        .flex1Mixin();
+    }
+    .flex2 {
+        .flex2Mixin();
+    }
+    .containerSecondary {
+        .containerSecondaryMixin();
+    }
+    .chartContent {
+        .chartContentMixin(7em);
+    }
+    .forecastDaily {
+        .forecastDailyMixin();
+    }
+    .forecastDailyInfo {
+        .forecastDailyInfoMixin();
+    }
+}
+
+/*  
+    Apple iPhone 5
+*/
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        .latitudeMixin(18%, 15%);
+    }
+    .longitude {
+        .longitudeMixin(5%);
+    }
+    .searchLocationButton {
+        .searchLocationButtonMixin(20%);
+    }
+    .GlobalSummaryPanel {
+        .GlobalSummaryPanelMixin(24em, 7em);
+    }
+    .flex1 {
+        .flex1Mixin();
+    }
+    .flex2 {
+        .flex2Mixin();
+    }
+    .containerSecondary {
+        .containerSecondaryMixin();
+    }
+    .chartContent {
+        .chartContentMixin(5em);
+    }
+    .forecastDaily {
+        .forecastDailyMixin();
+    }
+    .forecastDailyInfo {
+        .forecastDailyInfoMixin();
+    }
+}
+
+@media screen and (device-width: 568px) and (device-height: 320px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        .latitudeMixin(0, 18%);
+    }
+    .longitude {
+        .longitudeMixin(8%);
+    }
+    .searchLocationButton {
+        .searchLocationButtonMixin(10%);
+    }
+    .GlobalSummaryPanel {
+        .GlobalSummaryPanelMixin(43em, 10em);
+    }
+    .flex1 {
+        .flex1Mixin();
+    }
+    .flex2 {
+        .flex2Mixin();
+    }
+    .containerSecondary {
+        .containerSecondaryMixin();
+    }
+    .chartContent {
+        .chartContentMixin(8em);
+    }
+    .forecastDaily {
+        .forecastDailyMixin();
+    }
+    .forecastDailyInfo {
+        .forecastDailyInfoMixin();
+    }
+}
+
+/*  
+    Apple iPhone 6
+*/
+@media screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        .latitudeMixin(0, 15%);
+    }
+    .longitude {
+        .longitudeMixin(5%);
+    }
+    .searchLocationButton {
+        .searchLocationButtonMixin(20%);
+    }
+    .GlobalSummaryPanel {
+        .GlobalSummaryPanelMixin(28em, 8em);
+    }
+    .flex1 {
+        .flex1Mixin();
+    }
+    .flex2 {
+        .flex2Mixin();
+    }
+    .containerSecondary {
+        .containerSecondaryMixin();
+    }
+    .chartContent {
+        .chartContentMixin(6em);
+    }
+    .forecastDaily {
+        .forecastDailyMixin();
+    }
+    .forecastDailyInfo {
+        .forecastDailyInfoMixin();
+    }
+}
+
+@media screen and (device-width: 667px) and (device-height: 375px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        .latitudeMixin(0, 18%);
+    }
+    .longitude {
+        .longitudeMixin(8%);
+    }
+    .searchLocationButton {
+        .searchLocationButtonMixin(10%);
+    }
+    .GlobalSummaryPanel {
+        .GlobalSummaryPanelMixin(51em, 12em);
+    }
+    .flex1 {
+        .flex1Mixin();
+    }
+    .flex2 {
+        .flex2Mixin();
+    }
+    .containerSecondary {
+        .containerSecondaryMixin();
+    }
+    .chartContent {
+        .chartContentMixin(10em);
+    }
+    .forecastDaily {
+        .forecastDailyMixin();
+    }
+    .forecastDailyInfo {
+        .forecastDailyInfoMixin();
+    }
+}
+
+/*  
+    Apple iPhone 6 Plus
+*/
+@media screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        .latitudeMixin(0, 15%);
+    }
+    .longitude {
+        .longitudeMixin(5%);
+    }
+    .searchLocationButton {
+        .searchLocationButtonMixin(20%);
+    }
+    .GlobalSummaryPanel {
+        .GlobalSummaryPanelMixin(31em, 8em);
+    }
+    .flex1 {
+        .flex1Mixin();
+    }
+    .flex2 {
+        .flex2Mixin();
+    }
+    .containerSecondary {
+        .containerSecondaryMixin();
+    }
+    .chartContent {
+        .chartContentMixin(6em);
+    }
+    .forecastDaily {
+        .forecastDailyMixin();
+    }
+    .forecastDailyInfo {
+        .forecastDailyInfoMixin();
+    }
+}
+
+@media screen and (device-width: 736px) and (device-height: 414px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+    html {
+        overflow-x: hidden;
+    }
+    .latitude {
+        .latitudeMixin(2%, 18%);
+    }
+    .longitude {
+        .longitudeMixin(8%);
+    }
+    .searchLocationButton {
+        .searchLocationButtonMixin(30%);
+    }
+    .GlobalSummaryPanel {
+        .GlobalSummaryPanelMixin(56em, 13em);
+    }
+    .flex1 {
+        .flex1Mixin();
+    }
+    .flex2 {
+        .flex2Mixin();
+    }
+    .containerSecondary {
+        .containerSecondaryMixin();
+    }
+    .chartContent {
+        .chartContentMixin(11em);
     }
     .forecastDaily {
         .forecastDailyMixin();

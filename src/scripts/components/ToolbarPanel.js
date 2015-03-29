@@ -74,6 +74,7 @@ var ToolbarPanel = React.createClass({
             this._handleClick();
         }
     },
+    
     render: function () {
         
         var menuActions = [
