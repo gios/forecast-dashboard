@@ -10,7 +10,7 @@ app.use(express.static('dist'));
 // Forecast API
 var forecast = new Forecast({
     service: 'forecast.io',
-    key: '75e082171b2e3f48839528d4feba6de9',
+    key: 'API Key',
     units: 'celcius',
     cache: true,
     ttl: {
@@ -32,7 +32,7 @@ function getForecastData(coords, callback) {
 app.get('/forecast/:coords', function (req, res) {
     res.header('Access-Control-Allow-Origin', '*');
     var parseData = req.params.coords.split(',');
-    
+
     getForecastData(parseData, function (err, data) {
         if (err) {
             console.error(err);

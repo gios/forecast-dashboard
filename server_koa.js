@@ -17,7 +17,7 @@ app.use(serve('dist'));
 // Forecast API
 var forecast = new Forecast({
     service: 'forecast.io',
-    key: '75e082171b2e3f48839528d4feba6de9',
+    key: 'API Key',
     units: 'celcius',
     cache: true,
     ttl: {
