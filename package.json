@@ -54,6 +54,7 @@
         "react-hot-loader": "^1.0.7"
     },
     "engines": {
-        "iojs": "*"
+        "iojs": "*",
+        "node": ">=0.12.x"
     }
 }
