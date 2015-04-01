@@ -5,7 +5,7 @@ var express = require('express'),
     Forecast = require('forecast');
 
 // Static files
-app.use(express.static(__dirname + '/src'));
+app.use(express.static(__dirname + '/dist'));
 
 // Forecast API
 var forecast = new Forecast({
