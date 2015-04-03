@@ -10,7 +10,7 @@ app.use(express.static('production'));
 // Forecast API
 var forecast = new Forecast({
     service: 'forecast.io',
-    key: 'c9a592453daab6c91fe9c62eb69d527b',
+    key: 'API Key',
     units: 'celcius',
     cache: true,
     ttl: {
