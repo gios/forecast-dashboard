@@ -26,15 +26,15 @@ module.exports = {
     },
 
     plugins: [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin({
             output: {
                 comments: false
             }
         }),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin()
-  ],
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.AggressiveMergingPlugin()
+    ],
 
     resolve: {
         extensions: ['', '.js']
@@ -45,20 +45,20 @@ module.exports = {
             test: '\\.js$',
             exclude: 'node_modules',
             loader: 'jshint'
-    }],
+        }],
 
         loaders: [{
             test: /\.js$/,
             loader: 'jsx-loader?harmony'
-    }, {
+        }, {
             test: /\.css$/,
             loader: 'style-loader!css-loader'
-    }, {
+        }, {
             test: /\.less/,
             loader: 'style-loader!css-loader!less-loader'
-    }, {
+        }, {
             test: /\.(png|jpg)$/,
             loader: 'url-loader?limit=8192'
-    }]
+        }]
     }
 };

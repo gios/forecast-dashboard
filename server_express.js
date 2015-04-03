@@ -5,7 +5,7 @@ var express = require('express'),
     Forecast = require('forecast');
 
 // Static files
-app.use(express.static('dists'));
+app.use(express.static('dist'));
 
 // Forecast API
 var forecast = new Forecast({
@@ -21,7 +21,7 @@ var forecast = new Forecast({
 
 // Functions
 function getForecastData(coords, callback) {
-    forecast.get(coords, function (err, weather) {
+    forecast.get(coords, function(err, weather) {
         if (err) {
             callback(err, null);
         }
@@ -29,11 +29,11 @@ function getForecastData(coords, callback) {
     });
 }
 
-app.get('/forecast/:coords', function (req, res) {
+app.get('/forecast/:coords', function(req, res) {
     res.header('Access-Control-Allow-Origin', '*');
     var parseData = req.params.coords.split(',');
 
-    getForecastData(parseData, function (err, data) {
+    getForecastData(parseData, function(err, data) {
         if (err) {
             console.error(err);
         }
