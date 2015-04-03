@@ -5,12 +5,12 @@ var express = require('express'),
     Forecast = require('forecast');
 
 // Static files
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static('dist'));
 
 // Forecast API
 var forecast = new Forecast({
     service: 'forecast.io',
-    key: 'API Key',
+    key: 'c9a592453daab6c91fe9c62eb69d527b',
     units: 'celcius',
     cache: true,
     ttl: {
