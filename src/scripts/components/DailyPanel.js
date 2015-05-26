@@ -14,25 +14,25 @@ var SkyconsPanel = require("../../scripts/components/SkyconsPanel");
 require('../../styles/DailyPanel.less');
 
 var DailyPanel = React.createClass({
-    
+
     componentDidUpdate: function (element) {
         if (typeof element.daily[0] !== 'undefined') {
             this.refs.changeIcon.runWeatherIcon();
         }
     },
-    
+
     getCurrentlyDate: function (time) {
         return moment.unix(time).format("MMMM Do YYYY, h:mm:ss");
     },
-    
+
     getCurrentlyTime: function (time) {
         return moment.unix(time).format("h:mm:ss");
     },
-    
+
     _changeSkyconsIcon: function (tabIndex, tab) {
         this.refs.changeIcon.runWeatherIcon();
     },
-    
+
     render: function () {
         var self = this;
         var forecastDaily = this.props.daily.map(function (l) {
@@ -138,7 +138,7 @@ var DailyPanel = React.createClass({
                 </div>
             );
         });
-        
+
         return (
             <div className="DailyPanel">
                 <Tabs onChange={this._changeSkyconsIcon}>
