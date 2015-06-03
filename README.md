@@ -6,7 +6,7 @@ Project for weather forecast in Real-Time
 
 ### Version
 
-1.0.3
+2.0.1
 
 ### Technologies
 
