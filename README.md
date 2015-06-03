@@ -1,4 +1,4 @@
-# forecast-dashboard
+# Forecast Dashboard
 
 Project for weather forecast in Real-Time
 
