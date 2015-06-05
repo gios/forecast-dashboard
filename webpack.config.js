@@ -5,6 +5,7 @@
  * the subfolder /webpack-dev-server/ is visited. Visiting the root will not automatically reload.
  */
 'use strict';
+
 var webpack = require('webpack');
 
 module.exports = {
