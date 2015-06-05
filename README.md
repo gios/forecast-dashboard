@@ -6,7 +6,7 @@ Project for weather forecast in Real-Time using React
 
 ### Version
 
-2.0.1
+2.0.2
 
 ### Technologies
 

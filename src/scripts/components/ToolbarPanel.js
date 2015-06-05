@@ -15,11 +15,11 @@ injectTapEventPlugin();
 require('../../styles/ToolbarPanel.less');
 
 var ToolbarPanel = React.createClass({
-    
+
     componentDidMount: function () {
         document.addEventListener('keypress', this._handleEnterKey);
     },
-    
+
     getInitialState: function () {
         return {
             latitudeErrorText: 'This field must be numeric.',
@@ -28,23 +28,23 @@ var ToolbarPanel = React.createClass({
             longitudeFloatingErrorText: 'This field must be numeric.'
         };
     },
-            
+
     _latitudeHandleFloatingErrorInputChange: function(e) {
         var value = e.target.value;
         var isNumeric = !isNaN(parseFloat(value)) && isFinite(value);
         this.setState({
-            latitudeFloatingErrorText: isNumeric ? 'OK' : 'This field must be numeric.' 
+            latitudeFloatingErrorText: isNumeric ? 'OK' : 'This field must be numeric.'
         });
     },
-    
+
     _longitudeHandleFloatingErrorInputChange: function(e) {
         var value = e.target.value;
         var isNumeric = !isNaN(parseFloat(value)) && isFinite(value);
         this.setState({
-            longitudeFloatingErrorText: isNumeric ? 'OK' : 'This field must be numeric.' 
+            longitudeFloatingErrorText: isNumeric ? 'OK' : 'This field must be numeric.'
         });
     },
-    
+
     _handleClick: function () {
         this.refs.forecastProcessed.show();
         this.props.replaceCoords(this.refs.latitude.getValue(), this.refs.longitude.getValue());
@@ -53,7 +53,7 @@ var ToolbarPanel = React.createClass({
             this.refs.forecastProcessed.dismiss();
         }, 1000);
     },
-    
+
     _toolbarMenu: function (e, selectedIndex, menuItem) {
         switch (selectedIndex) {
         case 0:
@@ -74,9 +74,9 @@ var ToolbarPanel = React.createClass({
             this._handleClick();
         }
     },
-    
+
     render: function () {
-        
+
         var menuActions = [
             {
                 text: 'Cancel'
@@ -97,7 +97,7 @@ var ToolbarPanel = React.createClass({
                 text: 'Version'
             },
         ];
-        
+
         return (
             <div className="ToolbarPanel">
                 <Toolbar>
@@ -117,7 +117,7 @@ var ToolbarPanel = React.createClass({
                     Simple forecast-dashboard app with forecast.io API
                 </Dialog>
                 <Dialog ref="versionDialog" title="Forecast Dashboard - Gios" actions={menuActions}>
-                    3/29/2015 - Version 2.0.1
+                    Version 2.0.2
                 </Dialog>
             </div>
         );
