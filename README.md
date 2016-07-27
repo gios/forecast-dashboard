@@ -1,6 +1,6 @@
 # Forecast Dashboard
 
-Project for weather forecast in Real-Time using React
+Project for weather forecast in Real-Time using React.
 
 ![My image](https://github.com/gios/forecast-dashboard/blob/master/src/images/forecast-dashboard.png)
 
