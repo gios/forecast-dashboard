@@ -59,7 +59,7 @@ $ grunt serve
 
 ### How to Run (Simple)
 
-Just run **start.bat**
+Just run **start.bat** (Express.js)
 
 [React]:http://facebook.github.io/react/
 [Grunt]:http://gruntjs.com/
